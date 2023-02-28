@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 public class Movements : MonoBehaviour
 {
+    Rigidbody body;
+
     // Lanes X positions
     [SerializeField] private float leftLaneX = -5f;
     [SerializeField] private float middleLaneX = 0f;
@@ -15,6 +18,8 @@ public class Movements : MonoBehaviour
 
     private void Update()
     {
+        transform.Translate(transform.forward * 10 * Time.deltaTime);
+
         // Read player input
         // Horizontal axis to the left
         if (Input.GetKeyDown(KeyCode.Joystick1Button5))
