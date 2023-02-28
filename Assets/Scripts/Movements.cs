@@ -5,63 +5,71 @@ using DG.Tweening;
 
 public class Movements : MonoBehaviour
 {
-    [SerializeField] private AnimationCurve easingCurve;
+    // Lanes X positions
+    [SerializeField] private float leftLaneX = -5f;
+    [SerializeField] private float middleLaneX = 0f;
+    [SerializeField] private float rightLaneX = 5f;
 
-    [SerializeField] int positionLane;
+    // Start the player in the middle lane
+    private int _currentLane = 1; // 0: Left lane, 1: Middle lane, 2: Right lane
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        // Read player input
+        // Horizontal axis to the left
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+        {
+            MoveLeft();
+        }
+        // Horizontal axis to the right
+        else if (Input.GetKeyDown(KeyCode.Joystick1Button4))
+
+        {
+            MoveRight();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Move the player in the lane on his right
+    /// </summary>
+    private void MoveRight()
     {
-        
-        MovePlayer();
+        // Avoid leaving the 3 lanes
+        if (_currentLane - 1 < 0) return;
+        _currentLane--;
+        MoveToLane();
     }
 
-
-
-    private void MovePlayer()
+    /// <summary>
+    /// Move the player in the lane on his left
+    /// </summary>
+    private void MoveLeft()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5) && positionLane <= -2.5f)
-        {
-            transform.DOMoveX(0f, 1f);
-            positionLane = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5) && positionLane <= 2.5f)
-        {
-            transform.DOMoveX(5f, 1f);
-            positionLane = 5;
-        }
+        // Avoid leaving the 3 lanes
+        if (_currentLane + 1 > 2) return;
+        _currentLane++;
+        MoveToLane();
+    }
 
-
-        if (Input.GetKeyDown(KeyCode.Joystick1Button4) && positionLane >= 2.5f)
+    /// <summary>
+    /// Move the player to the current lane
+    /// </summary>
+    private void MoveToLane()
+    {
+        var position = transform.position;
+        switch (_currentLane)
         {
-            transform.DOMoveX(0f, 1f);
-            positionLane = 0;
+            case 0:
+                position.x = leftLaneX;
+                break;
+            case 1:
+                position.x = middleLaneX;
+                break;
+            case 2:
+                position.x = rightLaneX;
+                break;
+            default: return;
         }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button4) && positionLane >= -2.5f)
-        {
-            transform.DOMoveX(-5f, 1f);
-            positionLane = -5;
-        }
-
-        
-        if (positionLane == 0)
-        {
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
-        }
-        if (positionLane == 5)
-        {
-            transform.position = new Vector3(5, transform.position.y, transform.position.z);
-        }
-        if (positionLane == -5)
-        {
-            transform.position = new Vector3(-5, transform.position.y, transform.position.z);
-        }
-
+        transform.position = position;
     }
 }
