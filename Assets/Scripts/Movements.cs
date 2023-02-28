@@ -15,37 +15,53 @@ public class Movements : MonoBehaviour
         
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+        MovePlayer();
+    }
+
+
+
     private void MovePlayer()
     {
-        if (Input.GetAxis("Horizontal") == 1 && positionLane == -5 && positionLane != 5)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5) && positionLane <= -2.5f)
         {
-            transform.DOMoveX(0f, 1f, true).SetEase(easingCurve);
+            transform.DOMoveX(0f, 1f);
             positionLane = 0;
         }
-        if (Input.GetAxis("Horizontal") == 1 && positionLane == 0 && positionLane != -5 && positionLane != 5)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5) && positionLane <= 2.5f)
         {
-            transform.DOMoveX(5f, 1f, true).SetEase(easingCurve);
+            transform.DOMoveX(5f, 1f);
             positionLane = 5;
         }
 
 
-        if (Input.GetAxis("Horizontal") == -1 && positionLane == 5 && positionLane != -5)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button4) && positionLane >= 2.5f)
         {
-            transform.DOMoveX(0f, 1f, true).SetEase(easingCurve);
+            transform.DOMoveX(0f, 1f);
             positionLane = 0;
         }
-        if (Input.GetAxis("Horizontal") == -1 && positionLane == 0 && positionLane != -5 && positionLane != 5)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button4) && positionLane >= -2.5f)
         {
-            transform.DOMoveX(-5f, 1f, true).SetEase(easingCurve);
+            transform.DOMoveX(-5f, 1f);
             positionLane = -5;
         }
 
+        
+        if (positionLane == 0)
+        {
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        }
+        if (positionLane == 5)
+        {
+            transform.position = new Vector3(5, transform.position.y, transform.position.z);
+        }
+        if (positionLane == -5)
+        {
+            transform.position = new Vector3(-5, transform.position.y, transform.position.z);
+        }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        MovePlayer();
     }
 }
