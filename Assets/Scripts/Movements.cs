@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class Movements : MonoBehaviour
 {
+    public Animator anim;
     Rigidbody body;
     public CapsuleCollider bCPlayer;
 
@@ -79,5 +80,11 @@ public class Movements : MonoBehaviour
             default: return;
         }
         transform.position = position;
+    }
+
+    public void Taper()
+    {
+
+        anim.SetTrigger("Coup");
     }
 }
