@@ -32,7 +32,7 @@ public class Porte : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.Joystick1Button0))
         {
             print("ca marche ?");
-            float vitesseDestruction = Random.Range(5900, 6000);
+            float vitesseDestruction = Random.Range(1000, 2000);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;

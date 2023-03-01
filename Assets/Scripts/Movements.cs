@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class Movements : MonoBehaviour
 {
     Rigidbody body;
+    public CapsuleCollider bCPlayer;
 
     // Lanes X positions
     [SerializeField] private float leftLaneX = -5f;
@@ -18,6 +19,8 @@ public class Movements : MonoBehaviour
 
     private void Update()
     {
+       
+
         transform.Translate(transform.forward * 10 * Time.deltaTime);
 
         // Read player input
