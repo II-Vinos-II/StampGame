@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 public class Porte : MonoBehaviour
 {
     public List<Rigidbody> rb = new List<Rigidbody>();
+
+    public List<BoxCollider> bC = new List<BoxCollider>();
     float _thrust = 200;
 
     // Start is called before the first frame update
@@ -24,22 +26,27 @@ public class Porte : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && Input.GetKey(KeyCode.Joystick1Button0))
         {
             print("ca marche ?");
-            float vitesseDestruction = Random.Range(100, 200);
-            float angleDestruction = Random.Range(-45f, 45f);
+            float vitesseDestruction = Random.Range(5900, 6000);
+            float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;
             //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
             for (int i = 0; i <  rb.Count; i++)
             {
                 rb[i].AddForce(transform.right * vitesseDestruction * super);
+                rb[i].useGravity = true;
             }
-            
+            for (int i = 0; i < bC.Count; i++)
+            {
+                bC[i].isTrigger = false;
+            }
+
         }
         
     }

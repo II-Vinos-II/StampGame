@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0136f0bb707384257a86367ab68d4764, type: 3}
   m_Name: reminderinfo
   m_EditorClassIdentifier: 
-  text: 'faut que je propulse les portes dans ses grands morts
-
-'
+  text: '- '
   isRead: 1
