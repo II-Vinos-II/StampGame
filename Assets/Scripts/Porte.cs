@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 
 public class Porte : MonoBehaviour
 {
+    public Movements movements;
     public List<Rigidbody> rb = new List<Rigidbody>();
-
     public List<BoxCollider> bC = new List<BoxCollider>();
     float _thrust = 200;
 
@@ -31,6 +31,7 @@ public class Porte : MonoBehaviour
         
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.Joystick1Button0))
         {
+            movements.Taper();
             print("ca marche ?");
             float vitesseDestruction = Random.Range(1000, 2000);
             float angleDestruction = Random.Range(0f, 45f);
