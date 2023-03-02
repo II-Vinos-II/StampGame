@@ -6,7 +6,7 @@ public class Score : MonoBehaviour
 {
     Movements playerController;
     [SerializeField] int scoreInt;
-    [SerializeField] int scoreAdded = 10;
+    [SerializeField] int amount = 10;
     public bool canHavePoints;
 
 
@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
 
     public void ScoreSystem()
     {
-        scoreInt++;
+        scoreInt += amount;
     }
 
 }

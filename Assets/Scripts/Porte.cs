@@ -15,6 +15,8 @@ public class Porte : MonoBehaviour
     public List<GameObject> portesObj = new List<GameObject>();
     float _thrust = 200;
     bool isDestroyed = false;
+
+    public bool entered;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +30,14 @@ public class Porte : MonoBehaviour
         {
             playerController.Taper();
         }
+
     }
 
     public void OnTriggerStay(Collider other)
     {
-
-        if (other.CompareTag("Player") && (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+        
+        if (other.CompareTag("Player") && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
         {
-
-            score.ScoreSystem();
 
             //StartCoroutine(DestroyVerif());
             float vitesseDestruction = Random.Range(1000, 1500);
@@ -46,18 +47,22 @@ public class Porte : MonoBehaviour
             //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
             for (int i = 0; i <  rb.Count; i++)
             {
+                print("rb add froced");
                 rb[i].AddForce(transform.right * vitesseDestruction * super);
                 rb[i].useGravity = true;
             }
             for (int i = 0; i < bC.Count; i++)
             {
+                print("bc super");
                 bC[i].isTrigger = false;
             }
             for(int i = 0; i < portesObj.Count; i++)
             {
+                print("destroyed");
                 Destroy(portesObj[i], 3f);
             }
 
+            score.ScoreSystem();
         }
         
     }
@@ -73,6 +78,7 @@ public class Porte : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            entered = false;
             playerController.hitted = false;
         }
     }
