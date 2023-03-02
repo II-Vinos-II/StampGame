@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class Movements : MonoBehaviour
 {
 
-
+    public float speed;
     public Animator anim;
     Rigidbody body;
     public CapsuleCollider bCPlayer;
@@ -24,7 +24,7 @@ public class Movements : MonoBehaviour
     {
        
 
-        transform.Translate(transform.forward * 10 * Time.deltaTime);
+        transform.Translate(transform.forward * speed * Time.deltaTime);
 
         // Read player input
         // Horizontal axis to the left
