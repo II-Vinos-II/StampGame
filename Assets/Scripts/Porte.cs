@@ -35,7 +35,9 @@ public class Porte : MonoBehaviour
 
         if (other.CompareTag("Player") && (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
         {
-            playerController.hitted = true;
+
+            score.ScoreSystem();
+
             //StartCoroutine(DestroyVerif());
             float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);
@@ -60,13 +62,13 @@ public class Porte : MonoBehaviour
         
     }
 
-    //public IEnumerator DestroyVerif()
-    //{
-    //    isDestroyed = true;
-    //    yield return new WaitForSeconds(.3f);
-    //    isDestroyed = false;
-    //}
-    //
+    public IEnumerator DestroyVerif()
+    {
+        playerController.hitted = true;
+        yield return new WaitForSeconds(.1f);
+        playerController.hitted = true;
+    }
+    
     public void OnTriggerExit(Collider other)
     {
         if(other.CompareTag("Player"))

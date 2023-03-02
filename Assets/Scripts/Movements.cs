@@ -35,10 +35,6 @@ public class Movements : MonoBehaviour
 
     private void Update()
     {
-        if (hitted)
-        {
-            score.ApplyScore(10);
-        }
 
         transform.Translate(transform.forward * speed * Time.deltaTime);
 

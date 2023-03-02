@@ -24235,16 +24235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreInt: 0
   scoreAdded: 10
-  "nbPorteCass\xE9esForCombo": 0
-  combo: 0
-  combo2: 0
-  combo3: 0
-  combo4: 0
-  combo5: 0
-  combo6: 0
-  combo7: 0
-  combo8: 0
-  scoreEnPlus: 0
+  canHavePoints: 0
 --- !u!1 &1846492510
 GameObject:
   m_ObjectHideFlags: 0

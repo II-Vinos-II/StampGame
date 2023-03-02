@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0136f0bb707384257a86367ab68d4764, type: 3}
   m_Name: reminderinfo
   m_EditorClassIdentifier: 
-  text: "- Id\xE9e Musique :\n\t1. Planet X \n\t90. Bassline Braker"
+  text: "- Id\xE9e Musique :\n\t1. Planet X \n\t90. Bassline Braker\n\nscoring\nlife
+    management\nmenu\npause\nintro"
   isRead: 0
