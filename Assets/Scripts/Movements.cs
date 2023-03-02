@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UIElements;
+using XInputDotNetPure;
+using DG.Tweening.Core.Easing;
 
 public class Movements : MonoBehaviour
 {
+
+    PlayerIndex playerIndex;
+    GamePadState state;
+    GamePadState prevState;
 
     public float speed;
     public Animator anim;
@@ -28,12 +34,12 @@ public class Movements : MonoBehaviour
 
         // Read player input
         // Horizontal axis to the left
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetAxisRaw("Horizontal") > .25f)
         {
             MoveLeft();
         }
         // Horizontal axis to the right
-        else if (Input.GetKeyDown(KeyCode.Joystick1Button4))
+        else if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetAxisRaw("Horizontal") < -.25f)
 
         {
             MoveRight();
@@ -88,7 +94,19 @@ public class Movements : MonoBehaviour
 
     public void Taper()
     {
-
+        StartCoroutine(Vibre(.8f));
         anim.SetTrigger("Coup");
+    }
+
+    public IEnumerator Vibre(float vibrationPower)
+    {
+        
+        GamePad.SetVibration(playerIndex, vibrationPower, vibrationPower);
+        
+        yield return new WaitForSeconds(.4f);
+        
+        GamePad.SetVibration(playerIndex, 0, 0);
+        GamePad.SetVibration(playerIndex, 0, 0);
+        
     }
 }
