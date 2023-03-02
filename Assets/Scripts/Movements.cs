@@ -5,9 +5,15 @@ using DG.Tweening;
 using UnityEngine.UIElements;
 using XInputDotNetPure;
 using DG.Tweening.Core.Easing;
+using Cinemachine;
 
 public class Movements : MonoBehaviour
 {
+    
+    CinemachineFreeLook cmFreeCam;
+    float topRig;
+
+    bool hasMoved = false;
 
     PlayerIndex playerIndex;
     GamePadState state;
@@ -36,13 +42,29 @@ public class Movements : MonoBehaviour
         // Horizontal axis to the left
         if (Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetAxisRaw("Horizontal") > .25f)
         {
-            MoveLeft();
+
+            if (!hasMoved)
+            {
+                hasMoved = true;
+                MoveLeft();
+            }
         }
+
+        if(Input.GetAxisRaw("Horizontal") < .25f && Input.GetAxisRaw("Horizontal") > -.25f)
+        {
+            hasMoved = false;
+        }
+
         // Horizontal axis to the right
         else if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetAxisRaw("Horizontal") < -.25f)
 
         {
-            MoveRight();
+            if (!hasMoved)
+            {
+                hasMoved = true;
+                MoveRight();
+            }
+                
         }
     }
 
@@ -94,19 +116,40 @@ public class Movements : MonoBehaviour
 
     public void Taper()
     {
+
         StartCoroutine(Vibre(.8f));
-        anim.SetTrigger("Coup");
+        anim.Play("JambeAnim");
     }
 
     public IEnumerator Vibre(float vibrationPower)
     {
-        
+
+
         GamePad.SetVibration(playerIndex, vibrationPower, vibrationPower);
         
         yield return new WaitForSeconds(.4f);
         
         GamePad.SetVibration(playerIndex, 0, 0);
         GamePad.SetVibration(playerIndex, 0, 0);
-        
+
     }
+
+   // private IEnumerator _ProcessShake(float shakeIntensity = 5f, float shakeTiming = 0.5f)
+   // {
+   //     Noise(1, shakeIntensity);
+   //     yield return new WaitForSeconds(shakeTiming);
+   //     Noise(0, 0);
+   // }
+
+    //public void Noise(float amplitudeGain, float frequencyGain)
+    //{
+    //    cmFreeCam.topRig.Noise.m_AmplitudeGain = amplitudeGain;
+    //    cmFreeCam.middleRig.Noise.m_AmplitudeGain = amplitudeGain;
+    //    cmFreeCam.bottomRig.Noise.m_AmplitudeGain = amplitudeGain;
+    //
+    //    cmFreeCam.topRig.Noise.m_FrequencyGain = frequencyGain;
+    //    cmFreeCam.middleRig.Noise.m_FrequencyGain = frequencyGain;
+    //    cmFreeCam.bottomRig.Noise.m_FrequencyGain = frequencyGain;
+    //
+    //}
 }

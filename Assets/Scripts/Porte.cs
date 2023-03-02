@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Random = UnityEngine.Random; 
+using Random = UnityEngine.Random;
 
 public class Porte : MonoBehaviour
 {
@@ -22,8 +22,7 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
+            
     }
 
     private void OnTriggerStay(Collider other)
@@ -32,6 +31,7 @@ public class Porte : MonoBehaviour
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.Joystick1Button0))
         {
             movements.Taper();
+
             print("ca marche ?");
             float vitesseDestruction = Random.Range(1000, 2000);
             float angleDestruction = Random.Range(0f, 45f);
