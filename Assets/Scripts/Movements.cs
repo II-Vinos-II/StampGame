@@ -67,17 +67,19 @@ public class Movements : MonoBehaviour
     /// </summary>
     private void MoveToLane()
     {
+
+
         var position = transform.position;
         switch (_currentLane)
         {
             case 0:
-                position.x = leftLaneX;
+                transform.DOMoveX(leftLaneX, .2f);
                 break;
             case 1:
-                position.x = middleLaneX;
+                transform.DOMoveX(middleLaneX, .2f);
                 break;
             case 2:
-                position.x = rightLaneX;
+                transform.DOMoveX(rightLaneX, .2f);
                 break;
             default: return;
         }
