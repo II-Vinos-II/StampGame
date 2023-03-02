@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class Movements : MonoBehaviour
 {
+
+    public float speed;
     public Animator anim;
     Rigidbody body;
     public CapsuleCollider bCPlayer;
@@ -22,7 +24,7 @@ public class Movements : MonoBehaviour
     {
        
 
-        transform.Translate(transform.forward * 10 * Time.deltaTime);
+        transform.Translate(transform.forward * speed * Time.deltaTime);
 
         // Read player input
         // Horizontal axis to the left
@@ -65,17 +67,19 @@ public class Movements : MonoBehaviour
     /// </summary>
     private void MoveToLane()
     {
+
+
         var position = transform.position;
         switch (_currentLane)
         {
             case 0:
-                position.x = leftLaneX;
+                transform.DOMoveX(leftLaneX, .2f);
                 break;
             case 1:
-                position.x = middleLaneX;
+                transform.DOMoveX(middleLaneX, .2f);
                 break;
             case 2:
-                position.x = rightLaneX;
+                transform.DOMoveX(rightLaneX, .2f);
                 break;
             default: return;
         }
