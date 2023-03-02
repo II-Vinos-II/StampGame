@@ -1251,6 +1251,7 @@ MonoBehaviour:
   - {fileID: 357131737}
   - {fileID: 633116715}
   - {fileID: 88700867}
+  entered: 0
 --- !u!65 &64274502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1483,6 +1484,7 @@ MonoBehaviour:
   - {fileID: 719048938}
   - {fileID: 1428992109}
   portesObj: []
+  entered: 0
 --- !u!65 &88052106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2251,6 +2253,7 @@ MonoBehaviour:
   - {fileID: 310371305}
   - {fileID: 235348508}
   portesObj: []
+  entered: 0
 --- !u!65 &118921647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2369,6 +2372,7 @@ MonoBehaviour:
   - {fileID: 961082554}
   - {fileID: 422401326}
   portesObj: []
+  entered: 0
 --- !u!65 &124187772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3054,6 +3058,7 @@ MonoBehaviour:
   - {fileID: 1355671056}
   - {fileID: 1890163310}
   - {fileID: 1275725567}
+  entered: 0
 --- !u!65 &153152054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4620,6 +4625,7 @@ MonoBehaviour:
   - {fileID: 1519373745}
   - {fileID: 600163303}
   - {fileID: 1058670601}
+  entered: 0
 --- !u!65 &216036008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5631,6 +5637,7 @@ MonoBehaviour:
   - {fileID: 714806617}
   - {fileID: 664085688}
   portesObj: []
+  entered: 0
 --- !u!65 &325194030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6706,6 +6713,7 @@ MonoBehaviour:
   - {fileID: 1992690538}
   - {fileID: 2039748219}
   portesObj: []
+  entered: 0
 --- !u!65 &381083232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6834,6 +6842,7 @@ MonoBehaviour:
   - {fileID: 2883113366102196382}
   - {fileID: 6719655389941207631}
   portesObj: []
+  entered: 0
 --- !u!1 &383716473
 GameObject:
   m_ObjectHideFlags: 0
@@ -7530,6 +7539,7 @@ MonoBehaviour:
   - {fileID: 1659909563}
   - {fileID: 376297197}
   portesObj: []
+  entered: 0
 --- !u!65 &429078405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8640,6 +8650,7 @@ MonoBehaviour:
   - {fileID: 1456243834}
   - {fileID: 503973873}
   portesObj: []
+  entered: 0
 --- !u!65 &505561087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10676,6 +10687,7 @@ MonoBehaviour:
   - {fileID: 266317369}
   - {fileID: 1160355600}
   portesObj: []
+  entered: 0
 --- !u!65 &687030941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18371,6 +18383,7 @@ MonoBehaviour:
   - {fileID: 2050315706}
   - {fileID: 197117793}
   portesObj: []
+  entered: 0
 --- !u!65 &1294083098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23235,7 +23248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1737291393
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24234,7 +24247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreInt: 0
-  scoreAdded: 10
+  amount: 10
   canHavePoints: 0
 --- !u!1 &1846492510
 GameObject:
@@ -24781,6 +24794,7 @@ MonoBehaviour:
   - {fileID: 188832329}
   - {fileID: 516507282}
   portesObj: []
+  entered: 0
 --- !u!65 &1887337045
 BoxCollider:
   m_ObjectHideFlags: 0
