@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class Movements : MonoBehaviour
 {
+
+
     public Animator anim;
     Rigidbody body;
     public CapsuleCollider bCPlayer;
