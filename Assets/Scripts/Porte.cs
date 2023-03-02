@@ -11,8 +11,9 @@ public class Porte : MonoBehaviour
     public Movements movements;
     public List<Rigidbody> rb = new List<Rigidbody>();
     public List<BoxCollider> bC = new List<BoxCollider>();
+    public List<GameObject> portesObj = new List<GameObject>();
     float _thrust = 200;
-
+    bool isDestroyed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,10 @@ public class Porte : MonoBehaviour
             for (int i = 0; i < bC.Count; i++)
             {
                 bC[i].isTrigger = false;
+            }
+            for(int i = 0; i < portesObj.Count; i++)
+            {
+                Destroy(portesObj[i], 3f);
             }
 
         }

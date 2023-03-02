@@ -9,10 +9,8 @@ using Cinemachine;
 
 public class Movements : MonoBehaviour
 {
+    public CameraShake cameraShake;
     
-    CinemachineFreeLook cmFreeCam;
-    float topRig;
-
     bool hasMoved = false;
 
     PlayerIndex playerIndex;
@@ -116,7 +114,7 @@ public class Movements : MonoBehaviour
 
     public void Taper()
     {
-
+        cameraShake.StartCameraShake();
         StartCoroutine(Vibre(.8f));
         anim.Play("JambeAnim");
     }
@@ -133,23 +131,4 @@ public class Movements : MonoBehaviour
         GamePad.SetVibration(playerIndex, 0, 0);
 
     }
-
-   // private IEnumerator _ProcessShake(float shakeIntensity = 5f, float shakeTiming = 0.5f)
-   // {
-   //     Noise(1, shakeIntensity);
-   //     yield return new WaitForSeconds(shakeTiming);
-   //     Noise(0, 0);
-   // }
-
-    //public void Noise(float amplitudeGain, float frequencyGain)
-    //{
-    //    cmFreeCam.topRig.Noise.m_AmplitudeGain = amplitudeGain;
-    //    cmFreeCam.middleRig.Noise.m_AmplitudeGain = amplitudeGain;
-    //    cmFreeCam.bottomRig.Noise.m_AmplitudeGain = amplitudeGain;
-    //
-    //    cmFreeCam.topRig.Noise.m_FrequencyGain = frequencyGain;
-    //    cmFreeCam.middleRig.Noise.m_FrequencyGain = frequencyGain;
-    //    cmFreeCam.bottomRig.Noise.m_FrequencyGain = frequencyGain;
-    //
-    //}
 }
