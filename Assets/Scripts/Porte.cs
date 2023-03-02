@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 
 public class Porte : MonoBehaviour
 {
-    public Movements movements;
+    public Score score;
+    public Movements playerController;
     public List<Rigidbody> rb = new List<Rigidbody>();
     public List<BoxCollider> bC = new List<BoxCollider>();
     public List<GameObject> portesObj = new List<GameObject>();
@@ -23,18 +24,20 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
+        if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+        {
+            playerController.Taper();
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-        
-        if (other.CompareTag("Player") && Input.GetKey(KeyCode.Joystick1Button0))
-        {
-            movements.Taper();
 
-            print("ca marche ?");
-            float vitesseDestruction = Random.Range(1000, 2000);
+        if (other.CompareTag("Player") && (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+        {
+            playerController.hitted = true;
+            //StartCoroutine(DestroyVerif());
+            float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;
@@ -55,5 +58,20 @@ public class Porte : MonoBehaviour
 
         }
         
+    }
+
+    //public IEnumerator DestroyVerif()
+    //{
+    //    isDestroyed = true;
+    //    yield return new WaitForSeconds(.3f);
+    //    isDestroyed = false;
+    //}
+    //
+    public void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            playerController.hitted = false;
+        }
     }
 }
