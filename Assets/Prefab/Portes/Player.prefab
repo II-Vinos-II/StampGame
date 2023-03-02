@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3695003582102883719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.3599999, z: 0.2800026}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6415089723086284496}
@@ -316,10 +316,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0003847800f4fcb4894adb9c33d9470f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraShake: {fileID: 0}
-  speed: 15
+  cameraShake: {fileID: 5399537771172277110}
+  speed: 17
   anim: {fileID: 7278182553172819418}
   bCPlayer: {fileID: 7278182552820345685}
+  "tap\xE9e": 0
+  prise: 0
   leftLaneX: -5
   middleLaneX: 0
   rightLaneX: 5

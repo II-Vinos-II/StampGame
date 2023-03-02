@@ -9,6 +9,9 @@ using Cinemachine;
 
 public class Movements : MonoBehaviour
 {
+    public Score score;
+    public bool hitted;
+
     public CameraShake cameraShake;
     
     bool hasMoved = false;
@@ -32,7 +35,10 @@ public class Movements : MonoBehaviour
 
     private void Update()
     {
-       
+        if (hitted)
+        {
+            score.ApplyScore(10);
+        }
 
         transform.Translate(transform.forward * speed * Time.deltaTime);
 
@@ -122,11 +128,10 @@ public class Movements : MonoBehaviour
     public IEnumerator Vibre(float vibrationPower)
     {
 
-
         GamePad.SetVibration(playerIndex, vibrationPower, vibrationPower);
         
         yield return new WaitForSeconds(.4f);
-        
+
         GamePad.SetVibration(playerIndex, 0, 0);
         GamePad.SetVibration(playerIndex, 0, 0);
 

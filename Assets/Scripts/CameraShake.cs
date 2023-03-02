@@ -24,19 +24,12 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Start camera shake with default values
-    /// </summary>
     public void StartCameraShake()
     {
         StopAllCoroutines();
         if (defaultShakeData.infiniteDuration) SetNoiseValues();
         else StartCoroutine(CameraShakeCoroutine());
     }
-
-    /// <summary>
-    /// Start camera shake with specific values
-    /// </summary>
     public void StartCameraShake(CameraShakeData shakeData)
     {
         StopAllCoroutines();
@@ -69,10 +62,6 @@ public class CameraShake : MonoBehaviour
         yield return new WaitForSecondsRealtime(shakeData.duration);
         StopCameraShake();
     }
-
-    /// <summary>
-    /// Stop camera shake
-    /// </summary>
     public void StopCameraShake()
     {
         StopAllCoroutines();
