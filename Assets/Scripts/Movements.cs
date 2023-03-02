@@ -9,6 +9,8 @@ using Cinemachine;
 
 public class Movements : MonoBehaviour
 {
+    public int life = 3;
+
     public Score score;
     public bool hitted;
 
@@ -19,6 +21,8 @@ public class Movements : MonoBehaviour
     PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
+
+    public Porte porteScript;
 
     public float speed;
     public Animator anim;
@@ -35,6 +39,8 @@ public class Movements : MonoBehaviour
 
     private void Update()
     {
+
+
 
         transform.Translate(transform.forward * speed * Time.deltaTime);
 
