@@ -9,12 +9,13 @@ using Cinemachine;
 
 public class Movements : MonoBehaviour
 {
-    public int life = 3;
+     Animator StartAnim;
 
-    public Score score;
     public bool hitted;
 
     public CameraShake cameraShake;
+
+    bool canMove;
     
     bool hasMoved = false;
 
@@ -36,13 +37,19 @@ public class Movements : MonoBehaviour
 
     // Start the player in the middle lane
     private int _currentLane = 1; // 0: Left lane, 1: Middle lane, 2: Right lane
-
+    private void Start()
+    {
+        StartCoroutine(WaitToStart());
+    }
     private void Update()
     {
 
+        if (canMove)
+        {
+            transform.Translate(transform.forward * speed * Time.deltaTime);
 
+        }
 
-        transform.Translate(transform.forward * speed * Time.deltaTime);
 
         // Read player input
         // Horizontal axis to the left
@@ -137,5 +144,11 @@ public class Movements : MonoBehaviour
         GamePad.SetVibration(playerIndex, 0, 0);
         GamePad.SetVibration(playerIndex, 0, 0);
 
+    }
+
+    public IEnumerator WaitToStart()
+    {
+        yield return new WaitForSeconds(5f);
+        canMove = true;
     }
 }

@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 
 public class Porte : MonoBehaviour
 {
-    
+    public LifeManager lifeManager;
 
-
+    private bool giveScore;
     public Score score;
     public Movements playerController;
     public List<Rigidbody> rb = new List<Rigidbody>();
@@ -35,7 +35,7 @@ public class Porte : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "PorteCondamnée" && other.CompareTag("Player"))
+        if(tag == "Porte Condamnée" && other.CompareTag("Player"))
         {
             DetruirePorteCondamnée();
         }
@@ -44,8 +44,9 @@ public class Porte : MonoBehaviour
     public void OnTriggerStay(Collider other)
     {
 
-        if (other.CompareTag("Player") && (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+        if (other.CompareTag("Player"))
         {
+            if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
             DetruirePorte();
         }
         
@@ -53,10 +54,9 @@ public class Porte : MonoBehaviour
 
     public void DetruirePorteCondamnée()
     {
-        //destroyedPorteCondamnée = true;
+        lifeManager.LifeCounter();
 
-        //StartCoroutine(DestroyVerif());
-        float vitesseDestruction = Random.Range(1000, 1500);
+        float vitesseDestruction = Random.Range(2000, 3500);
         float angleDestruction = Random.Range(0f, 45f);
         Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
         float super = angleDeTir.x;
@@ -78,8 +78,12 @@ public class Porte : MonoBehaviour
 
     public void DetruirePorte()
     {
+        if (!giveScore)
+        {
 
-        score.ScoreSystem();
+            score.ScoreSystem();
+            giveScore = true;
+        }
 
         //StartCoroutine(DestroyVerif());
         float vitesseDestruction = Random.Range(1000, 1500);

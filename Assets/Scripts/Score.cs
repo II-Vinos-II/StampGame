@@ -9,18 +9,6 @@ public class Score : MonoBehaviour
     [SerializeField] int amount = 10;
     public bool canHavePoints;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void ScoreSystem()
     {
         scoreInt += amount;
