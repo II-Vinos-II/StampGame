@@ -216,6 +216,8 @@ GameObject:
   - component: {fileID: 7278182552820345685}
   - component: {fileID: 7278182552820345681}
   - component: {fileID: 7278182552820345680}
+  - component: {fileID: 3536943150219870475}
+  - component: {fileID: 5360690151150891087}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -316,12 +318,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0003847800f4fcb4894adb9c33d9470f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 3
+  score: {fileID: 3536943150219870475}
+  hitted: 0
   cameraShake: {fileID: 5399537771172277110}
-  speed: 17
+  porteScript: {fileID: 0}
+  speed: 15
   anim: {fileID: 7278182553172819418}
   bCPlayer: {fileID: 7278182552820345685}
-  "tap\xE9e": 0
-  prise: 0
   leftLaneX: -5
   middleLaneX: 0
   rightLaneX: 5
@@ -341,6 +345,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3536943150219870475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278182552820345686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0acab81cee1e86b489b238335edea658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreInt: 0
+  amount: 10
+  canHavePoints: 0
+--- !u!114 &5360690151150891087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278182552820345686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fab6bbdd6926144a80db1a0d315eead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
 --- !u!1001 &7278182551749282817
 PrefabInstance:
   m_ObjectHideFlags: 0

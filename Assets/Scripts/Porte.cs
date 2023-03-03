@@ -8,6 +8,9 @@ using Random = UnityEngine.Random;
 
 public class Porte : MonoBehaviour
 {
+    
+
+
     public Score score;
     public Movements playerController;
     public List<Rigidbody> rb = new List<Rigidbody>();
@@ -15,8 +18,6 @@ public class Porte : MonoBehaviour
     public List<GameObject> portesObj = new List<GameObject>();
     float _thrust = 200;
     bool isDestroyed = false;
-
-    public bool entered;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,41 +31,76 @@ public class Porte : MonoBehaviour
         {
             playerController.Taper();
         }
+    }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "PorteCondamnée" && other.CompareTag("Player"))
+        {
+            DetruirePorteCondamnée();
+        }
     }
 
     public void OnTriggerStay(Collider other)
     {
-        
-        if (other.CompareTag("Player") && (Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+
+        if (other.CompareTag("Player") && (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
         {
-
-            //StartCoroutine(DestroyVerif());
-            float vitesseDestruction = Random.Range(1000, 1500);
-            float angleDestruction = Random.Range(0f, 45f);
-            Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
-            float super = angleDeTir.x;
-            //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
-            for (int i = 0; i <  rb.Count; i++)
-            {
-                print("rb add froced");
-                rb[i].AddForce(transform.right * vitesseDestruction * super);
-                rb[i].useGravity = true;
-            }
-            for (int i = 0; i < bC.Count; i++)
-            {
-                print("bc super");
-                bC[i].isTrigger = false;
-            }
-            for(int i = 0; i < portesObj.Count; i++)
-            {
-                print("destroyed");
-                Destroy(portesObj[i], 3f);
-            }
-
-            score.ScoreSystem();
+            DetruirePorte();
         }
         
+    }
+
+    public void DetruirePorteCondamnée()
+    {
+        //destroyedPorteCondamnée = true;
+
+        //StartCoroutine(DestroyVerif());
+        float vitesseDestruction = Random.Range(1000, 1500);
+        float angleDestruction = Random.Range(0f, 45f);
+        Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
+        float super = angleDeTir.x;
+        //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
+        for (int i = 0; i < rb.Count; i++)
+        {
+            rb[i].AddForce(transform.right * vitesseDestruction * super);
+            rb[i].useGravity = true;
+        }
+        for (int i = 0; i < bC.Count; i++)
+        {
+            bC[i].isTrigger = false;
+        }
+        for (int i = 0; i < portesObj.Count; i++)
+        {
+            Destroy(portesObj[i], 3f);
+        }
+    }
+
+    public void DetruirePorte()
+    {
+
+        score.ScoreSystem();
+
+        //StartCoroutine(DestroyVerif());
+        float vitesseDestruction = Random.Range(1000, 1500);
+        float angleDestruction = Random.Range(0f, 45f);
+        Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
+        float super = angleDeTir.x;
+        //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
+        for (int i = 0; i < rb.Count; i++)
+        {
+            rb[i].AddForce(transform.right * vitesseDestruction * super);
+            rb[i].useGravity = true;
+        }
+        for (int i = 0; i < bC.Count; i++)
+        {
+            bC[i].isTrigger = false;
+        }
+        for (int i = 0; i < portesObj.Count; i++)
+        {
+            Destroy(portesObj[i], 3f);
+        }
+
     }
 
     public IEnumerator DestroyVerif()
@@ -78,7 +114,6 @@ public class Porte : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            entered = false;
             playerController.hitted = false;
         }
     }
