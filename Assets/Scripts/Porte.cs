@@ -18,6 +18,8 @@ public class Porte : MonoBehaviour
     public List<GameObject> portesObj = new List<GameObject>();
     float _thrust = 200;
     bool isDestroyed = false;
+
+    public AudioSource porteCrashSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +57,6 @@ public class Porte : MonoBehaviour
     public void DetruirePorteCondamnée()
     {
         lifeManager.LifeCounter();
-
         float vitesseDestruction = Random.Range(2000, 3500);
         float angleDestruction = Random.Range(0f, 45f);
         Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
@@ -81,6 +82,7 @@ public class Porte : MonoBehaviour
         if (!giveScore)
         {
 
+            porteCrashSound.Play();
             score.ScoreSystem();
             giveScore = true;
         }

@@ -403,7 +403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57b1646fdf901249bb3695343354f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movements: {fileID: 0}
+  lifeManager: {fileID: 0}
+  score: {fileID: 0}
+  playerController: {fileID: 0}
   rb:
   - {fileID: 4627267889151457001}
   - {fileID: 9127991318749691775}
@@ -442,7 +444,25 @@ MonoBehaviour:
   - {fileID: 8349531057942054585}
   - {fileID: 6401717259182151298}
   - {fileID: 8817506101309822514}
-  portesObj: []
+  portesObj:
+  - {fileID: 730400898863750435}
+  - {fileID: 9127991318749691760}
+  - {fileID: 850362597610540358}
+  - {fileID: 1682949887461875481}
+  - {fileID: 6581791954134321223}
+  - {fileID: 3244648769895094174}
+  - {fileID: 5667007397545788120}
+  - {fileID: 2703570878267662811}
+  - {fileID: 3971491496624010551}
+  - {fileID: 568601316030266013}
+  - {fileID: 1666000511721586714}
+  - {fileID: 4767448418600816417}
+  - {fileID: 472510451758349534}
+  - {fileID: 5287283359872262456}
+  - {fileID: 7834726360579762312}
+  - {fileID: 7121319018358941291}
+  - {fileID: 4909544814329292668}
+  - {fileID: 4776961361012786087}
 --- !u!1 &730400898863750435
 GameObject:
   m_ObjectHideFlags: 0
