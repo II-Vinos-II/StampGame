@@ -15,7 +15,7 @@ public class Movements : MonoBehaviour
 
     public CameraShake cameraShake;
 
-    bool canMove;
+    public bool canMove;
     
     bool hasMoved = false;
 
