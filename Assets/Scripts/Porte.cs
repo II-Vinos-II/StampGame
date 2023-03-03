@@ -81,11 +81,11 @@ public class Porte : MonoBehaviour
     {
         if (!giveScore)
         {
-
             porteCrashSound.Play();
             score.ScoreSystem();
             giveScore = true;
         }
+
 
         //StartCoroutine(DestroyVerif());
         float vitesseDestruction = Random.Range(1000, 1500);

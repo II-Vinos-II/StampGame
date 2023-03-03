@@ -46,6 +46,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 665368346626549172, guid: 91737946d4113084594623410cf6642d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 665368346626549173, guid: 91737946d4113084594623410cf6642d,
         type: 3}
       propertyPath: m_RootOrder
@@ -562,6 +567,7 @@ MonoBehaviour:
   - {fileID: 3413994862102012638}
   - {fileID: 1342683522293305399}
   - {fileID: 7569298842879341022}
+  porteCrashSound: {fileID: 0}
 --- !u!1 &4255916362227084665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9204573606674803871, guid: 54a4d09abe3070249bd97e929b57bf83,
@@ -967,6 +973,11 @@ PrefabInstance:
       propertyPath: portesObj.Array.data[11]
       value: 
       objectReference: {fileID: 3131002633640130575}
+    - target: {fileID: 8332332232307584489, guid: ce2a4e90ab7676547a4b97b6806681ba,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8332332232307584494, guid: ce2a4e90ab7676547a4b97b6806681ba,
         type: 3}
       propertyPath: m_Name

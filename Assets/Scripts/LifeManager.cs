@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LifeManager : MonoBehaviour
 {
     Movements playerController;
     public float life = 3;
     public GameObject gameOver;
+
+    public TextMeshProUGUI text;
     public void LifeCounter()
     {
         life--;
@@ -14,7 +17,9 @@ public class LifeManager : MonoBehaviour
         {
             print(life);
             gameOver.SetActive(true);
-            playerController.speed = 0;
         }
+
+        text.text = ": " +  life.ToString();
+
     }
 }

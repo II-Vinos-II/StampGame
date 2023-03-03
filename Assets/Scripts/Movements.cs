@@ -23,6 +23,7 @@ public class Movements : MonoBehaviour
     GamePadState state;
     GamePadState prevState;
 
+
     //public Porte porteScript;
 
     public float speed;

@@ -372,7 +372,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3501189373544098600}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6963587, y: 3.4983244, z: 2.102295}
@@ -446,6 +446,7 @@ MonoBehaviour:
   - {fileID: 2845620805367229017}
   - {fileID: 1927387508318312624}
   - {fileID: 6996009998696298841}
+  porteCrashSound: {fileID: 0}
 --- !u!1 &3678687006085867006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9204573606674803871, guid: fbf9298ccfaa60f4694c0afde7cec078,
@@ -884,6 +885,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1635269392874489879}
     m_Modifications:
+    - target: {fileID: 665368346626549172, guid: 91737946d4113084594623410cf6642d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 665368346626549173, guid: 91737946d4113084594623410cf6642d,
         type: 3}
       propertyPath: m_RootOrder
