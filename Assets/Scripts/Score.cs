@@ -10,11 +10,14 @@ public class Score : MonoBehaviour
     [SerializeField] int amount = 10;
     public bool canHavePoints;
     public TextMeshProUGUI text;
+    public void Update()
+    {
 
+        text.text = "Score : " + scoreInt.ToString();
+    }
     public void ScoreSystem()
     {
         scoreInt += amount;
-        text.text = ": " +  scoreInt.ToString();
 
     }
 
