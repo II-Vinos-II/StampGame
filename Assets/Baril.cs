@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Baril : MonoBehaviour
 {
-    Movements playerController;
+    public Movements playerController;
     private bool ExloseWall;
     public Rigidbody rb;
     public BoxCollider bC;
@@ -24,15 +24,15 @@ public class Baril : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            DetruireMur();
+            PushBaril();
         }
 
         if (other.CompareTag("Mur"))
         {
-
+            gameObject.SetActive(false);
         }
     }
-    public void DetruireMur()
+    public void PushBaril()
     {
 
 
@@ -44,12 +44,10 @@ public class Baril : MonoBehaviour
         //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
         
         
-            rb.AddForce(transform.right * vitesseDestruction * super);
+            rb.AddForce(transform.forward * vitesseDestruction);
             rb.useGravity = true;
         
-            bC.isTrigger = false;
         
-            Destroy(BarilsObj, 3f);
         
         if (!ExloseWall)
         {
