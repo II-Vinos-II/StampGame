@@ -8,6 +8,7 @@ TagManager:
   - PlaneG
   - PlaneD
   - "Porte Condamn\xE9e"
+  - Mur
   layers:
   - Default
   - TransparentFX
