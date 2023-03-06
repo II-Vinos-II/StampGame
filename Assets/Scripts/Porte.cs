@@ -79,12 +79,6 @@ public class Porte : MonoBehaviour
 
     public void DetruirePorte()
     {
-        if (!giveScore)
-        {
-            porteCrashSound.Play();
-            score.ScoreSystem();
-            giveScore = true;
-        }
 
 
         //StartCoroutine(DestroyVerif());
@@ -105,6 +99,12 @@ public class Porte : MonoBehaviour
         for (int i = 0; i < portesObj.Count; i++)
         {
             Destroy(portesObj[i], 3f);
+        }
+        if (!giveScore)
+        {
+            porteCrashSound.Play();
+            score.ScoreSystem();
+            giveScore = true;
         }
 
     }

@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+
+public class Baril : MonoBehaviour
+{
+    Movements playerController;
+    private bool ExloseWall;
+    public Rigidbody rb;
+    public BoxCollider bC;
+    public GameObject BarilsObj;
+    public Score score;
+
+    private void Update()
+    {
+
+        if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+        {
+            playerController.Taper();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            DetruireMur();
+        }
+
+        if (other.CompareTag("Mur"))
+        {
+
+        }
+    }
+    public void DetruireMur()
+    {
+
+
+        //StartCoroutine(DestroyVerif());
+        float vitesseDestruction = Random.Range(1000, 1500);
+        float angleDestruction = Random.Range(0f, 45f);
+        Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
+        float super = angleDeTir.x;
+        //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
+        
+        
+            rb.AddForce(transform.right * vitesseDestruction * super);
+            rb.useGravity = true;
+        
+            bC.isTrigger = false;
+        
+            Destroy(BarilsObj, 3f);
+        
+        if (!ExloseWall)
+        {
+            score.ScoreSystemBaril();
+            ExloseWall = true;
+        }
+    }
+}
