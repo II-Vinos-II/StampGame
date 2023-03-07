@@ -5,9 +5,9 @@ using TMPro;
 
 public class LifeManager : MonoBehaviour
 {
+    public ScreenManager screenManager;
     Movements playerController;
     public float life = 3;
-    public GameObject gameOver;
 
     public TextMeshProUGUI text;
     public void LifeCounter()
@@ -16,7 +16,7 @@ public class LifeManager : MonoBehaviour
         if(life == 0)
         {
             print(life);
-            gameOver.SetActive(true);
+            screenManager.gameOvered = true;
         }
 
         text.text = ": " +  life.ToString();

@@ -24,7 +24,7 @@ public class Score : MonoBehaviour
 
     public void ScoreSystemBaril()
     {
-        scoreInt += amount;
+        scoreInt += amountBaril;
     }
 
 }
