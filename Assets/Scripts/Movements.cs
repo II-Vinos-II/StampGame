@@ -9,7 +9,7 @@ using Cinemachine;
 
 public class Movements : MonoBehaviour
 {
-     Animator StartAnim;
+    Animator StartAnim;
 
     public bool hitted;
 

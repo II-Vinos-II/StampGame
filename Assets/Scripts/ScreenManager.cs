@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
+    public Movements playerController;
+
     public GameObject gameOver;
     public bool gameOvered;
 
     public GameObject pause;
-    public bool paused;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,61 +25,65 @@ public class ScreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // GAME OVER
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7))
+        {
+            Pause();
+        }
+
         if (gameOvered)
         {
             GameOver();
         }
-
-        // PAUSE
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7)) // Start
-        {
-            paused = true;
-        }
-
-        
     }
 
     public void GameOver()
     {
-
+        playerController.canMove = false;
         gameOver.SetActive(true);
-
-        if (Input.GetKeyDown(KeyCode.Joystick1Button7)) //Start
-        {
-            SceneManager.LoadScene(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button6)) // Options
-        {
-            Application.Quit();
-        }
     }
 
     public void Pause()
     {
-        if (paused)
-        {
-            pause.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
-            {
-                pause.SetActive(false);
-                paused = false;
-            }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button7))
-            {
-                SceneManager.LoadScene(0);
-                paused = false;
-            }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button6)) // Options
-            {
-                Application.Quit();
-                paused = false;
-            }
-        }
+        pause.SetActive(true);
+        playerController.canMove = false;
     }
 
-    public void OnApplicationPause(bool pauseStatus)
+    public void PlayGame()
     {
-        paused = pauseStatus;
-    }   
+        SceneManager.LoadScene(0);
+    }
+    public void Resume()
+    {
+        pause.SetActive(false);
+        playerController.canMove = true;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public IEnumerator WaitForTimeScaleZeroForPause()
+    {
+        pause.SetActive(true);
+        yield return new WaitForSeconds(2.1f);
+        playerController.canMove = false;
+    }
+    public IEnumerator WaitForTimeScaleOneFromPause()
+    {
+        pause.SetActive(false);
+        yield return new WaitForSeconds(2.1f); 
+        playerController.canMove = true;
+    }
+    public IEnumerator WaitForTimeScaleZeroForGameOver()
+    {
+        gameOver.SetActive(true);
+        yield return new WaitForSeconds(2.1f);
+        playerController.canMove = false;
+    }
 }
