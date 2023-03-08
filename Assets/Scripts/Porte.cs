@@ -29,7 +29,7 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+        if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             playerController.Taper();
         }
@@ -48,7 +48,7 @@ public class Porte : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)))
+            if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0))
             DetruirePorte();
         }
         

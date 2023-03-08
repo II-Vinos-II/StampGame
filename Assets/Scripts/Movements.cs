@@ -49,37 +49,37 @@ public class Movements : MonoBehaviour
         {
             transform.Translate(transform.forward * speed * Time.deltaTime);
 
-        }
-
-
-        // Read player input
-        // Horizontal axis to the left
-        if (Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetAxisRaw("Horizontal") > .25f)
-        {
-
-            if (!hasMoved)
+            // Read player input
+            // Horizontal axis to the left
+            if (Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetAxisRaw("Horizontal") > .25f)
             {
-                hasMoved = true;
-                MoveLeft();
+
+                if (!hasMoved)
+                {
+                    hasMoved = true;
+                    MoveLeft();
+                }
+            }
+
+            if (Input.GetAxisRaw("Horizontal") < .25f && Input.GetAxisRaw("Horizontal") > -.25f)
+            {
+                hasMoved = false;
+            }
+
+            // Horizontal axis to the right
+            else if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetAxisRaw("Horizontal") < -.25f)
+
+            {
+                if (!hasMoved)
+                {
+                    hasMoved = true;
+                    MoveRight();
+                }
+
             }
         }
 
-        if(Input.GetAxisRaw("Horizontal") < .25f && Input.GetAxisRaw("Horizontal") > -.25f)
-        {
-            hasMoved = false;
-        }
 
-        // Horizontal axis to the right
-        else if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetAxisRaw("Horizontal") < -.25f)
-
-        {
-            if (!hasMoved)
-            {
-                hasMoved = true;
-                MoveRight();
-            }
-                
-        }
     }
 
     /// <summary>
