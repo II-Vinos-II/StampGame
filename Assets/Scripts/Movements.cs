@@ -23,8 +23,8 @@ public class Movements : MonoBehaviour
     GamePadState state;
     GamePadState prevState;
 
-
-    //public Porte porteScript;
+    public AudioSource oof;
+    public Animator DegatEffects;
 
     public float speed;
     public Animator anim;
@@ -44,7 +44,7 @@ public class Movements : MonoBehaviour
     }
     private void Update()
     {
-        print(speed);
+        print(canMove);
 
         if (canMove)
         {
