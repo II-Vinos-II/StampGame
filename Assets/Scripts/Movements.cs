@@ -44,6 +44,7 @@ public class Movements : MonoBehaviour
     }
     private void Update()
     {
+        print(speed);
 
         if (canMove)
         {
@@ -130,9 +131,12 @@ public class Movements : MonoBehaviour
 
     public void Taper()
     {
-        cameraShake.StartCameraShake();
-        StartCoroutine(Vibre(.8f));
-        anim.Play("JambeAnim");
+        if (canMove)
+        {
+            cameraShake.StartCameraShake();
+            StartCoroutine(Vibre(.8f));
+            anim.Play("JambeAnim");
+        }
     }
 
     public IEnumerator Vibre(float vibrationPower)

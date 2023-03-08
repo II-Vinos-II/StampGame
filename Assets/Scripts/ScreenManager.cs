@@ -55,7 +55,7 @@ public class ScreenManager : MonoBehaviour
     public void Resume()
     {
         pause.SetActive(false);
-        playerController.canMove = true;
+        StartCoroutine(WaitToResume());
     }
 
     public void Restart()
@@ -85,5 +85,10 @@ public class ScreenManager : MonoBehaviour
         gameOver.SetActive(true);
         yield return new WaitForSeconds(2.1f);
         playerController.canMove = false;
+    }
+    public IEnumerator WaitToResume()
+    {
+        yield return new WaitForSeconds(3f);
+        playerController.canMove = true;
     }
 }

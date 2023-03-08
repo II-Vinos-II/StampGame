@@ -29,15 +29,18 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
         {
-            playerController.Taper();
+            if (playerController.canMove)
+            {
+                playerController.Taper();
+            }
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if(tag == "Porte Condamnée" && other.CompareTag("Player"))
+        if(tag == "Porte Condamnée" && other.CompareTag("Player") && playerController.canMove)
         {
             DetruirePorteCondamnée();
         }
@@ -45,68 +48,71 @@ public class Porte : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-
         if (other.CompareTag("Player"))
         {
-            if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0))
+            if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
             DetruirePorte();
         }
-        
     }
 
     public void DetruirePorteCondamnée()
     {
-        lifeManager.LifeCounter();
-        float vitesseDestruction = Random.Range(2000, 3500);
-        float angleDestruction = Random.Range(0f, 45f);
-        Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
-        float super = angleDeTir.x;
-        //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
-        for (int i = 0; i < rb.Count; i++)
+        if (playerController.canMove)
         {
-            rb[i].AddForce(transform.right * vitesseDestruction * super);
-            rb[i].useGravity = true;
-        }
-        for (int i = 0; i < bC.Count; i++)
-        {
-            bC[i].isTrigger = false;
-        }
-        for (int i = 0; i < portesObj.Count; i++)
-        {
-            Destroy(portesObj[i], 3f);
+            StartCoroutine(WaitToRestoreFromDegats());
+
+            lifeManager.LifeCounter();
+            float vitesseDestruction = Random.Range(2000, 3500);
+            float angleDestruction = Random.Range(0f, 45f);
+            Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
+            float super = angleDeTir.x;
+            //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
+            for (int i = 0; i < rb.Count; i++)
+            {
+                rb[i].AddForce(transform.right * vitesseDestruction * super);
+                rb[i].useGravity = true;
+            }
+            for (int i = 0; i < bC.Count; i++)
+            {
+                bC[i].isTrigger = false;
+            }
+            for (int i = 0; i < portesObj.Count; i++)
+            {
+                Destroy(portesObj[i], 3f);
+            }
         }
     }
 
     public void DetruirePorte()
     {
-
-
-        //StartCoroutine(DestroyVerif());
-        float vitesseDestruction = Random.Range(1000, 1500);
-        float angleDestruction = Random.Range(0f, 45f);
-        Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
-        float super = angleDeTir.x;
-        //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
-        for (int i = 0; i < rb.Count; i++)
+        if (playerController.canMove)
         {
-            rb[i].AddForce(transform.right * vitesseDestruction * super);
-            rb[i].useGravity = true;
+            //StartCoroutine(DestroyVerif());
+            float vitesseDestruction = Random.Range(1000, 1500);
+            float angleDestruction = Random.Range(0f, 45f);
+            Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
+            float super = angleDeTir.x;
+            //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
+            for (int i = 0; i < rb.Count; i++)
+            {
+                rb[i].AddForce(transform.right * vitesseDestruction * super);
+                rb[i].useGravity = true;
+            }
+            for (int i = 0; i < bC.Count; i++)
+            {
+                bC[i].isTrigger = false;
+            }
+            for (int i = 0; i < portesObj.Count; i++)
+            {
+                Destroy(portesObj[i], 3f);
+            }
+            if (!giveScore)
+            {
+                porteCrashSound.Play();
+                score.ScoreSystem();
+                giveScore = true;
+            }
         }
-        for (int i = 0; i < bC.Count; i++)
-        {
-            bC[i].isTrigger = false;
-        }
-        for (int i = 0; i < portesObj.Count; i++)
-        {
-            Destroy(portesObj[i], 3f);
-        }
-        if (!giveScore)
-        {
-            porteCrashSound.Play();
-            score.ScoreSystem();
-            giveScore = true;
-        }
-
     }
 
     public IEnumerator DestroyVerif()
@@ -122,5 +128,23 @@ public class Porte : MonoBehaviour
         {
             playerController.hitted = false;
         }
+    }
+
+    public IEnumerator WaitToRestoreFromDegats()
+    {
+        playerController.canMove = false;
+        playerController.speed = 0;
+        yield return new WaitForSeconds(1.5f);
+        playerController.canMove = true;
+        playerController.speed = 3;
+        yield return new WaitForSeconds(.5f);
+        playerController.speed = 6;
+        yield return new WaitForSeconds(.5f);
+        playerController.speed = 9;
+        yield return new WaitForSeconds(.5f);
+        playerController.speed = 11;
+        yield return new WaitForSeconds(.5f);
+        playerController.speed = 15;
+
     }
 }
