@@ -29,6 +29,7 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
         {
             if (playerController.canMove)
@@ -60,7 +61,7 @@ public class Porte : MonoBehaviour
         if (playerController.canMove)
         {
             StartCoroutine(WaitToRestoreFromDegats());
-
+            playerController.DegatEffects.SetTrigger("oof");
             lifeManager.LifeCounter();
             float vitesseDestruction = Random.Range(2000, 3500);
             float angleDestruction = Random.Range(0f, 45f);
@@ -132,9 +133,10 @@ public class Porte : MonoBehaviour
 
     public IEnumerator WaitToRestoreFromDegats()
     {
+        playerController.oof.Play();
         playerController.canMove = false;
         playerController.speed = 0;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
         playerController.canMove = true;
         playerController.speed = 3;
         yield return new WaitForSeconds(.5f);
