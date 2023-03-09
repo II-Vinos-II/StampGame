@@ -4157,12 +4157,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6767274871068313687, guid: 40c1da2ed85242b4e9fa21de37cbe5d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 40c1da2ed85242b4e9fa21de37cbe5d6, type: 3}
---- !u!1 &205150981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6209995503180092298, guid: 96026229c94cb1049923af1528d2f171,
-    type: 3}
-  m_PrefabInstance: {fileID: 643838476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &210749521
 Mesh:
   m_ObjectHideFlags: 0
@@ -11031,6 +11025,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508292974}
   m_Mesh: {fileID: 836702833731085491, guid: ee84a396523570a4caf26d6e6e05c4ff, type: 3}
+--- !u!114 &519731870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6843762315381834584, guid: 96026229c94cb1049923af1528d2f171,
+    type: 3}
+  m_PrefabInstance: {fileID: 643838476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57b1646fdf901249bb3695343354f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526109989
 GameObject:
   m_ObjectHideFlags: 0
@@ -11135,12 +11141,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23749526, y: 4.240632, z: 2.0327296}
   m_Center: {x: 5.02, y: 1.6203148, z: -0.07524061}
---- !u!1 &529819424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3897749110035042960, guid: 96026229c94cb1049923af1528d2f171,
-    type: 3}
-  m_PrefabInstance: {fileID: 643838476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &538784642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440200252564081881, guid: 46f69588af9989c47ab4713272a55490,
@@ -12560,7 +12560,7 @@ PrefabInstance:
         type: 3}
       propertyPath: posrteClean
       value: 
-      objectReference: {fileID: 529819424}
+      objectReference: {fileID: 0}
     - target: {fileID: 212799403146165496, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: porteCrashSound
@@ -12575,7 +12575,12 @@ PrefabInstance:
         type: 3}
       propertyPath: "posrteFractur\xE9e"
       value: 
-      objectReference: {fileID: 1325296723}
+      objectReference: {fileID: 0}
+    - target: {fileID: 319375848873576511, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 388542798750328303, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_IsActive
@@ -12636,11 +12641,41 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1525043456}
+    - target: {fileID: 1254678905438129947, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1378449507867122678, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1650658604}
+    - target: {fileID: 1468813377684488506, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638609377666302091, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 3536943150724701160}
+    - target: {fileID: 1638609377666302091, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: lifeManager
+      value: 
+      objectReference: {fileID: 5360690150582102700}
+    - target: {fileID: 1638609377666302091, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteCrashSound
+      value: 
+      objectReference: {fileID: 79588744}
+    - target: {fileID: 1638609377666302091, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 7278182551177687474}
     - target: {fileID: 1683699271315871423, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_IsActive
@@ -12665,7 +12700,7 @@ PrefabInstance:
         type: 3}
       propertyPath: posrteClean
       value: 
-      objectReference: {fileID: 1389267524}
+      objectReference: {fileID: 0}
     - target: {fileID: 1860858671796443407, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: porteCrashSound
@@ -12680,7 +12715,7 @@ PrefabInstance:
         type: 3}
       propertyPath: "posrteFractur\xE9e"
       value: 
-      objectReference: {fileID: 205150981}
+      objectReference: {fileID: 0}
     - target: {fileID: 2004028668848945142, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_IsActive
@@ -12700,7 +12735,7 @@ PrefabInstance:
         type: 3}
       propertyPath: posrteClean
       value: 
-      objectReference: {fileID: 529819424}
+      objectReference: {fileID: 0}
     - target: {fileID: 2068839355776061928, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: porteCrashSound
@@ -12715,7 +12750,7 @@ PrefabInstance:
         type: 3}
       propertyPath: "posrteFractur\xE9e"
       value: 
-      objectReference: {fileID: 1325296723}
+      objectReference: {fileID: 0}
     - target: {fileID: 2132507930820880319, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
@@ -12751,11 +12786,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972511066732478066, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2977895650925093637, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1690326178}
+    - target: {fileID: 3157919803939433651, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3843237633767812522, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
@@ -12780,7 +12825,7 @@ PrefabInstance:
         type: 3}
       propertyPath: posrteClean
       value: 
-      objectReference: {fileID: 740039277}
+      objectReference: {fileID: 0}
     - target: {fileID: 3924443890319761435, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: porteCrashSound
@@ -12795,7 +12840,7 @@ PrefabInstance:
         type: 3}
       propertyPath: "posrteFractur\xE9e"
       value: 
-      objectReference: {fileID: 1025149773}
+      objectReference: {fileID: 0}
     - target: {fileID: 4069361542532333013, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
@@ -12815,7 +12860,7 @@ PrefabInstance:
         type: 3}
       propertyPath: posrteClean
       value: 
-      objectReference: {fileID: 740039277}
+      objectReference: {fileID: 0}
     - target: {fileID: 4422167660233501443, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: porteCrashSound
@@ -12830,7 +12875,12 @@ PrefabInstance:
         type: 3}
       propertyPath: "posrteFractur\xE9e"
       value: 
-      objectReference: {fileID: 1025149773}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641861539818759297, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4658246098473967497, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
@@ -12856,6 +12906,31 @@ PrefabInstance:
       propertyPath: barilController
       value: 
       objectReference: {fileID: 317233906}
+    - target: {fileID: 5112209996417887852, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteController.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112209996417887852, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteController.Array.data[0]
+      value: 
+      objectReference: {fileID: 1215838476}
+    - target: {fileID: 5112209996417887852, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteController.Array.data[1]
+      value: 
+      objectReference: {fileID: 519731870}
+    - target: {fileID: 5112209996417887852, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteController.Array.data[2]
+      value: 
+      objectReference: {fileID: 919576857}
+    - target: {fileID: 5112209996417887852, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteController.Array.data[3]
+      value: 
+      objectReference: {fileID: 919576857}
     - target: {fileID: 5317079451926814418, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_IsActive
@@ -12920,7 +12995,7 @@ PrefabInstance:
         type: 3}
       propertyPath: posrteClean
       value: 
-      objectReference: {fileID: 1389267524}
+      objectReference: {fileID: 0}
     - target: {fileID: 6120833288132612667, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: porteCrashSound
@@ -12935,7 +13010,7 @@ PrefabInstance:
         type: 3}
       propertyPath: "posrteFractur\xE9e"
       value: 
-      objectReference: {fileID: 205150981}
+      objectReference: {fileID: 0}
     - target: {fileID: 6208572968504619613, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_IsActive
@@ -12946,6 +13021,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6843762315381834584, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 3536943150724701160}
+    - target: {fileID: 6843762315381834584, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: lifeManager
+      value: 
+      objectReference: {fileID: 5360690150582102700}
+    - target: {fileID: 6843762315381834584, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteCrashSound
+      value: 
+      objectReference: {fileID: 79588744}
+    - target: {fileID: 6843762315381834584, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 7278182551177687474}
     - target: {fileID: 6899990840624874799, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_IsActive
@@ -12991,11 +13086,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8375146175600095915, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 3536943150724701160}
+    - target: {fileID: 8375146175600095915, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: lifeManager
+      value: 
+      objectReference: {fileID: 5360690150582102700}
+    - target: {fileID: 8375146175600095915, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: porteCrashSound
+      value: 
+      objectReference: {fileID: 79588744}
+    - target: {fileID: 8375146175600095915, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 7278182551177687474}
     - target: {fileID: 8525638639943971157, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1969554382}
+    - target: {fileID: 8588827717135259829, guid: 96026229c94cb1049923af1528d2f171,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8647279745226895402, guid: 96026229c94cb1049923af1528d2f171,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -13471,12 +13591,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739800657}
   m_Mesh: {fileID: 1091509860754208309, guid: ee84a396523570a4caf26d6e6e05c4ff, type: 3}
---- !u!1 &740039277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7100924816071434953, guid: 96026229c94cb1049923af1528d2f171,
-    type: 3}
-  m_PrefabInstance: {fileID: 643838476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &740115110
 GameObject:
   m_ObjectHideFlags: 0
@@ -16701,6 +16815,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914689919}
   m_Mesh: {fileID: 4132730832020002858, guid: ee84a396523570a4caf26d6e6e05c4ff, type: 3}
+--- !u!114 &919576857 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8375146175600095915, guid: 96026229c94cb1049923af1528d2f171,
+    type: 3}
+  m_PrefabInstance: {fileID: 643838476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57b1646fdf901249bb3695343354f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929251426
 GameObject:
   m_ObjectHideFlags: 0
@@ -17863,12 +17989,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46f69588af9989c47ab4713272a55490, type: 3}
---- !u!1 &1025149773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5053801131090221711, guid: 96026229c94cb1049923af1528d2f171,
-    type: 3}
-  m_PrefabInstance: {fileID: 643838476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1026905665
 Mesh:
   m_ObjectHideFlags: 0
@@ -21174,6 +21294,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205137204}
   m_Mesh: {fileID: 1759374660107118300, guid: ee84a396523570a4caf26d6e6e05c4ff, type: 3}
+--- !u!114 &1215838476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1638609377666302091, guid: 96026229c94cb1049923af1528d2f171,
+    type: 3}
+  m_PrefabInstance: {fileID: 643838476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57b1646fdf901249bb3695343354f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1218863258
 GameObject:
   m_ObjectHideFlags: 0
@@ -23056,12 +23188,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 826521737}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1325296723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7610868599259954691, guid: 96026229c94cb1049923af1528d2f171,
-    type: 3}
-  m_PrefabInstance: {fileID: 643838476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1329834687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440200252564081881, guid: 46f69588af9989c47ab4713272a55490,
@@ -24289,12 +24415,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440200252564081881, guid: 46f69588af9989c47ab4713272a55490,
     type: 3}
   m_PrefabInstance: {fileID: 1422793729}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1389267524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4169076624191783567, guid: 96026229c94cb1049923af1528d2f171,
-    type: 3}
-  m_PrefabInstance: {fileID: 643838476}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1398890977
 GameObject:

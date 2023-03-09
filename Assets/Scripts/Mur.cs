@@ -6,7 +6,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Mur : MonoBehaviour
 {
 
-    public Porte porteController;
+    public List<Porte> porteController = new List<Porte>();
     public Baril barilController;
 
     public MeshRenderer murClean;
@@ -33,6 +33,19 @@ public class Mur : MonoBehaviour
     {
         if (other.CompareTag("Baril"))
         {
+
+            for (int i = 0; i < porteController.Count; i++)
+            {
+                if(porteController[i].tag == "Porte Condamnée")
+                {
+                    porteController[i].DetruirePorteCondamnée();
+                }
+                else
+                {
+                    porteController[i].DetruirePorte();
+                }
+            }
+
 
             print("baril détécté");
             murClean.enabled = false;
