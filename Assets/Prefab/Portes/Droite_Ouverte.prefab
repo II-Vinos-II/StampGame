@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 1457969205059146905}
   - component: {fileID: 1652944730399863611}
   m_Layer: 0
-  m_Name: Barricade_Milieu.fracture.001
+  m_Name: Barricade_Milieu.fracture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 7852359310092755649}
   - component: {fileID: 6877561218243550528}
   m_Layer: 0
-  m_Name: Barricade_Milieu.fracture
+  m_Name: Barricade_Milieu.fracture.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
