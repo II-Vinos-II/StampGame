@@ -5,13 +5,14 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Mur : MonoBehaviour
 {
-
-    public List<Porte> porteController = new List<Porte>();
     public Baril barilController;
 
     public MeshRenderer murClean;
     public BoxCollider murCleanCollider;
     public GameObject murFracturé;
+
+    public List<MeshRenderer> portesCleanRenderers = new List<MeshRenderer>();
+    public List<GameObject> portesFracturéesObj = new List<GameObject>();
 
     public List<Rigidbody> rb = new List<Rigidbody>();
     public List<BoxCollider> bC = new List<BoxCollider>();
@@ -34,22 +35,19 @@ public class Mur : MonoBehaviour
         if (other.CompareTag("Baril"))
         {
 
-            for (int i = 0; i < porteController.Count; i++)
-            {
-                if(porteController[i].tag == "Porte Condamnée")
-                {
-                    porteController[i].DetruirePorteCondamnée();
-                }
-                else
-                {
-                    porteController[i].DetruirePorte();
-                }
-            }
-
 
             print("baril détécté");
             murClean.enabled = false;
-            murFracturé.SetActive(true);   
+            murFracturé.SetActive(true);
+
+            for (int i = 0; i < portesCleanRenderers.Count; i++)
+            {
+                portesCleanRenderers[i].enabled = false;
+            }
+            for (int i = 0; i < portesFracturéesObj.Count; i++)
+            {
+                portesFracturéesObj[i].SetActive(true);
+            }
 
             //StartCoroutine(DestroyVerif());
             float vitesseDestruction = Random.Range(2000, 2500);

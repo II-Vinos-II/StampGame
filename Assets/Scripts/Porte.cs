@@ -20,6 +20,7 @@ public class Porte : MonoBehaviour
     public List<Rigidbody> rb = new List<Rigidbody>();
     public List<BoxCollider> bC = new List<BoxCollider>();
     public List<GameObject> portesObj = new List<GameObject>();
+
     float _thrust = 200;
     bool isDestroyed = false;
 
