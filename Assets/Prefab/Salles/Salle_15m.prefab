@@ -100,6 +100,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plafond_15M
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73503b7eb357ad74f96f73020bebaf68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73503b7eb357ad74f96f73020bebaf68, type: 3}
 --- !u!4 &5382550065358247799 stripped
@@ -169,6 +174,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6379714374324109420, guid: ab12f6d248b8b4b4ab94c4c82139bb54,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6379714374324109420, guid: ab12f6d248b8b4b4ab94c4c82139bb54,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mur
+      objectReference: {fileID: 0}
+    - target: {fileID: -1777105032934158256, guid: ab12f6d248b8b4b4ab94c4c82139bb54,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ab12f6d248b8b4b4ab94c4c82139bb54,
         type: 3}
