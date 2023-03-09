@@ -5,6 +5,8 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Mur : MonoBehaviour
 {
+
+    public Porte porteController;
     public Baril barilController;
 
     public MeshRenderer murClean;
