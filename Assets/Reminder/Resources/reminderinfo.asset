@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: reminderinfo
   m_EditorClassIdentifier: 
   text: "- Id\xE9e Musique :\n\t*\n\t*\n\n\nmenu\npause\nintro"
-  isRead: 0
+  isRead: 1
