@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019629242809601995}
   m_Layer: 0
-  m_Name: Barricade_milieu_fracture.001
+  m_Name: Barricade_milieu_fracture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ Transform:
   - {fileID: 3973311073980889103}
   - {fileID: 1552188253353885936}
   m_Father: {fileID: 6472469692542445494}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069519993765333561
 GameObject:
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6843675150679722257}
   m_Layer: 0
-  m_Name: Barricade_milieu_fracture
+  m_Name: Barricade_gauche_fracture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ Transform:
   - {fileID: 8464350373766727225}
   - {fileID: 4967143727803783522}
   m_Father: {fileID: 6472469692542445494}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2301160715568248719
 GameObject:
@@ -317,37 +317,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &2410452453443345829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6556914299984039040}
-  m_Layer: 0
-  m_Name: Barricade_droite_fracture
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6556914299984039040
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2410452453443345829}
-  m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: -4.9201727}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6472469692542445494}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2929674458367531433
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +661,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6556914299984039040}
   - {fileID: 6843675150679722257}
   - {fileID: 2019629242809601995}
   m_Father: {fileID: 386846392849209795}
