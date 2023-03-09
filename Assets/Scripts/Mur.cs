@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.VFX;
 
 public class Mur : MonoBehaviour
 {
     public Baril barilController;
+
+    public VisualEffect explosion;
 
     public MeshRenderer murClean;
     public BoxCollider murCleanCollider;
@@ -34,7 +37,7 @@ public class Mur : MonoBehaviour
     {
         if (other.CompareTag("Baril"))
         {
-
+            explosion.Play();
 
             print("baril détécté");
             murClean.enabled = false;
