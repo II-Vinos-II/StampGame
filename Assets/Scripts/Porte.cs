@@ -13,6 +13,10 @@ public class Porte : MonoBehaviour
     private bool giveScore;
     public Score score;
     public Movements playerController;
+
+    public MeshRenderer porteClean;
+    public GameObject porteFracturée;
+
     public List<Rigidbody> rb = new List<Rigidbody>();
     public List<BoxCollider> bC = new List<BoxCollider>();
     public List<GameObject> portesObj = new List<GameObject>();
@@ -88,6 +92,8 @@ public class Porte : MonoBehaviour
     {
         if (playerController.canMove)
         {
+            porteClean.enabled = false;
+            porteFracturée.SetActive(true);
             //StartCoroutine(DestroyVerif());
             float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);

@@ -1,0 +1,66 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+
+public class Mur : MonoBehaviour
+{
+    public Baril barilController;
+
+    public MeshRenderer murClean;
+    public BoxCollider murCleanCollider;
+    public GameObject murFracturé;
+
+    public List<Rigidbody> rb = new List<Rigidbody>();
+    public List<BoxCollider> bC = new List<BoxCollider>();
+    public List<GameObject> mursObj = new List<GameObject>();
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        murClean.enabled = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Baril"))
+        {
+
+            print("baril détécté");
+            murClean.enabled = false;
+            murFracturé.SetActive(true);   
+
+            //StartCoroutine(DestroyVerif());
+            float vitesseDestruction = Random.Range(1000, 1500);
+            float angleDestruction = Random.Range(0f, 45f);
+            Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
+            float super = angleDeTir.x;
+            //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
+            for (int i = 0; i < rb.Count; i++)
+            {
+                rb[i].AddForce(transform.right * vitesseDestruction * super);
+                rb[i].useGravity = true;
+            }
+            for (int i = 0; i < bC.Count; i++)
+            {
+                bC[i].isTrigger = false;
+            }
+            for (int i = 0; i < mursObj.Count; i++)
+            {
+                Destroy(mursObj[i], 3f);
+            }
+            //if (!giveScore)
+            //{
+            //    porteCrashSound.Play();
+            //    score.ScoreSystem();
+            //    giveScore = true;
+            //}
+        }
+    }
+}
