@@ -526,7 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5638538856289664410}
   m_Layer: 0
-  m_Name: Barricade_milieu_fracture.001
+  m_Name: Barricade_milieu_fracture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
