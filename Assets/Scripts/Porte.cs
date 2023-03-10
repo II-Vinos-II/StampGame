@@ -68,7 +68,7 @@ public class Porte : MonoBehaviour
             StartCoroutine(WaitToRestoreFromDegats());
             playerController.DegatEffects.SetTrigger("oof");
             lifeManager.LifeCounter();
-            float vitesseDestruction = Random.Range(2000, 3500);
+            float vitesseDestruction = Random.Range(1000, 2500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;
