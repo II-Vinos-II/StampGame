@@ -11,6 +11,8 @@ public class radio : MonoBehaviour
     public List<GameObject> radioObj = new List<GameObject>();
     public Score score;
 
+    public bool isDestroyed = false;
+
     private void Update()
     {
 
@@ -23,6 +25,7 @@ public class radio : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Time.timeScale = .5f;
             DestroyRadio();
         }
 
@@ -30,7 +33,7 @@ public class radio : MonoBehaviour
     public void DestroyRadio()
     {
 
-        float vitesseDestruction = Random.Range(2000, 3500);
+        float vitesseDestruction = Random.Range(1000, 2500);
         float angleDestruction = Random.Range(0f, 45f);
         Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
         float super = angleDeTir.x;
@@ -44,10 +47,5 @@ public class radio : MonoBehaviour
         {
             bC[i].isTrigger = false;
         }
-        for (int i = 0; i < radioObj.Count; i++)
-        {
-            Destroy(radioObj[i], 3f);
-        }
-
     }
 }
