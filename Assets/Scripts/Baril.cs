@@ -42,8 +42,8 @@ public class Baril : MonoBehaviour
         
             rb.AddForce(transform.forward * vitesseDestruction);
             rb.useGravity = true;
-        
-        
+
+        Destroy(gameObject, 1f);
         
         if (!ExloseWall)
         {

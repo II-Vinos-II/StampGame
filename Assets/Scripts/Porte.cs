@@ -96,7 +96,7 @@ public class Porte : MonoBehaviour
             porteClean.enabled = false;
             porteFracturée.SetActive(true);
             //StartCoroutine(DestroyVerif());
-            float vitesseDestruction = Random.Range(1000, 1500);
+            float vitesseDestruction = Random.Range(2000, 2500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;

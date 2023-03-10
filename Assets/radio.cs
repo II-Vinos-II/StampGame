@@ -11,6 +11,8 @@ public class radio : MonoBehaviour
     public List<GameObject> radioObj = new List<GameObject>();
     public Score score;
 
+    public GameObject fin;
+
     public bool isDestroyed = false;
 
     private void Update()
@@ -23,7 +25,7 @@ public class radio : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             Time.timeScale = .5f;
             DestroyRadio();
@@ -47,5 +49,13 @@ public class radio : MonoBehaviour
         {
             bC[i].isTrigger = false;
         }
+    }
+
+    public IEnumerator Finish()
+    {
+        Time.timeScale = .5f;
+        DestroyRadio();
+        yield return new WaitForSeconds(3);
+        fin.SetActive(true);
     }
 }

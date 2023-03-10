@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1409481111712503965}
   m_Layer: 0
   m_Name: Porte.Milieu_Clean
-  m_TagString: Untagged
+  m_TagString: "Porte Condamn\xE9e"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4637,7 +4637,7 @@ GameObject:
   - component: {fileID: 1256826440648277953}
   m_Layer: 0
   m_Name: Porte.Droite_Clen
-  m_TagString: Untagged
+  m_TagString: "Porte Condamn\xE9e"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

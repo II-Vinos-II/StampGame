@@ -14,7 +14,8 @@ public class Mur : MonoBehaviour
     public BoxCollider murCleanCollider;
     public GameObject murFracturé;
 
-    public List<MeshRenderer> portesCleanRenderers = new List<MeshRenderer>();
+    public List<MeshRenderer> portesCleanRenderers = new List<MeshRenderer>(); 
+    public List<GameObject> portesCleanObj = new List<GameObject>();
     public List<GameObject> portesFracturéesObj = new List<GameObject>();
 
     public List<Rigidbody> rb = new List<Rigidbody>();
@@ -50,6 +51,13 @@ public class Mur : MonoBehaviour
             for (int i = 0; i < portesFracturéesObj.Count; i++)
             {
                 portesFracturéesObj[i].SetActive(true);
+            }
+            for(int i = 0; i < portesCleanObj.Count; i++)
+            {
+                if(portesCleanObj[i].tag == "Porte Condamnée")
+                {
+                    portesCleanObj[i].tag = "Untagged";
+                }
             }
 
             //StartCoroutine(DestroyVerif());
