@@ -9,6 +9,7 @@ public class Mur : MonoBehaviour
     public Baril barilController;
 
     public VisualEffect explosion;
+    public AudioSource explosionSound;
 
     public MeshRenderer murClean;
     public BoxCollider murCleanCollider;
@@ -39,7 +40,7 @@ public class Mur : MonoBehaviour
         if (other.CompareTag("Baril"))
         {
             explosion.Play();
-
+            explosionSound.Play(); 
             print("baril détécté");
             murClean.enabled = false;
             murFracturé.SetActive(true);

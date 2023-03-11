@@ -10,6 +10,12 @@ public class LifeManager : MonoBehaviour
     public float life = 3;
 
     public TextMeshProUGUI text;
+
+    private void Update()
+    {
+
+        text.text = ": " + life.ToString();
+    }
     public void LifeCounter()
     {
         life--;
@@ -19,7 +25,6 @@ public class LifeManager : MonoBehaviour
             screenManager.gameOvered = true;
         }
 
-        text.text = ": " +  life.ToString();
 
     }
 }
