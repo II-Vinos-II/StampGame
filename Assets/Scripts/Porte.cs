@@ -34,6 +34,7 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(isDestroyed);
 
         if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
         {
@@ -57,7 +58,10 @@ public class Porte : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
-            DetruirePorte();
+            {
+                DetruirePorte();
+            }
+            
         }
     }
 
@@ -93,6 +97,7 @@ public class Porte : MonoBehaviour
     {
         if (playerController.canMove)
         {
+            isDestroyed = true;
             porteClean.enabled = false;
             porteFracturée.SetActive(true);
             //StartCoroutine(DestroyVerif());
@@ -116,6 +121,7 @@ public class Porte : MonoBehaviour
             }
             if (!giveScore)
             {
+                porteCrashSound.pitch = Random.Range(0.8f, 1.8f);
                 porteCrashSound.Play();
                 score.ScoreSystem();
                 giveScore = true;
@@ -132,9 +138,15 @@ public class Porte : MonoBehaviour
     
     public void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && !isDestroyed)
         {
             playerController.hitted = false;
+            DetruirePorteCondamnée(); /////////////////////////////////////////
+            isDestroyed = true;
+        }
+        else
+        {
+            isDestroyed = false;
         }
     }
 
