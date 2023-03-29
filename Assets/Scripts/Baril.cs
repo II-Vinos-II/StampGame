@@ -12,6 +12,9 @@ public class Baril : MonoBehaviour
     public GameObject BarilsObj;
     public Score score;
 
+    public AudioSource barilhit;
+
+
     private void Update()
     {
 
@@ -31,7 +34,7 @@ public class Baril : MonoBehaviour
     public void PushBaril()
     {
 
-        
+        barilhit.Play();
         //StartCoroutine(DestroyVerif());
         float vitesseDestruction = Random.Range(2000, 2500);
         float angleDestruction = Random.Range(0f, 45f);

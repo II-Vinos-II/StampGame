@@ -13,6 +13,7 @@ public class Mur : MonoBehaviour
     public MeshRenderer murClean;
     public BoxCollider murCleanCollider;
     public GameObject murFracturé;
+    public AudioSource explosionSound;
 
     public List<MeshRenderer> portesCleanRenderers = new List<MeshRenderer>(); 
     public List<GameObject> portesCleanObj = new List<GameObject>();
@@ -38,6 +39,8 @@ public class Mur : MonoBehaviour
     {
         if (other.CompareTag("Baril"))
         {
+
+            explosionSound.Play();
             explosion.Play();
 
             print("baril détécté");
