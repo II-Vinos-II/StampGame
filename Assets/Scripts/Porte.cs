@@ -35,7 +35,7 @@ public class Porte : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
+        if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
         {
             if (playerController.canMove)
             {
@@ -56,7 +56,7 @@ public class Porte : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
+            if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
             DetruirePorte();
         }
     }
@@ -65,10 +65,9 @@ public class Porte : MonoBehaviour
     {
         if (playerController.canMove)
         {
-            StartCoroutine(WaitToRestoreFromDegats());
-            playerController.DegatEffects.SetTrigger("oof");
-            lifeManager.LifeCounter();
-            float vitesseDestruction = Random.Range(1000, 2500);
+            porteClean.enabled = false;
+            porteFracturée.SetActive(true);
+            float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;
@@ -86,6 +85,9 @@ public class Porte : MonoBehaviour
             {
                 Destroy(portesObj[i], 3f);
             }
+            playerController.DegatEffects.SetTrigger("oof");
+            lifeManager.LifeCounter();
+            StartCoroutine(WaitToRestoreFromDegats());
         }
     }
 
@@ -96,7 +98,7 @@ public class Porte : MonoBehaviour
             porteClean.enabled = false;
             porteFracturée.SetActive(true);
             //StartCoroutine(DestroyVerif());
-            float vitesseDestruction = Random.Range(2000, 2500);
+            float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;

@@ -20,7 +20,8 @@ public class ObjectsShooting : MonoBehaviour
     float _thrust = 200;
     bool isDestroyed = false;
 
-    public AudioSource objectCrashSound;
+    //public AudioSource objectCrashSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class ObjectsShooting : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
+        if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
         {
             if (playerController.canMove)
             {
@@ -40,19 +41,12 @@ public class ObjectsShooting : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (tag == "Porte Condamnée" && other.CompareTag("Player") && playerController.canMove)
-        {
-            DetruireObjectWhenHitted();
-        }
-    }
 
     public void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0) && playerController.canMove)
+            if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
                 DetruireObject();
         }
     }
@@ -64,7 +58,7 @@ public class ObjectsShooting : MonoBehaviour
             StartCoroutine(WaitToRestoreFromDegats());
             playerController.DegatEffects.SetTrigger("oof");
             lifeManager.LifeCounter();
-            float vitesseDestruction = Random.Range(1000, 2500);
+            float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;
@@ -112,7 +106,7 @@ public class ObjectsShooting : MonoBehaviour
             }
             if (!giveScore)
             {
-                objectCrashSound.Play();
+                //objectCrashSound.Play();
                 score.ScoreSystem();
                 giveScore = true;
             }
