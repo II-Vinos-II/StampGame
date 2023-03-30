@@ -35,9 +35,9 @@ public class Mur : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Baril"))
+        if (other.gameObject.tag == "Baril")
         {
 
             explosionSound.Play();
