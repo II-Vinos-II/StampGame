@@ -9,6 +9,8 @@ public class ObjectsShooting : MonoBehaviour
     private bool giveScore;
     public Score score;
     public Movements playerController;
+    bool objHit = false;
+    bool dontHitObj;
 
     public MeshRenderer objectClean;
     public GameObject objectFracturé;
@@ -39,6 +41,13 @@ public class ObjectsShooting : MonoBehaviour
                 playerController.Taper();
             }
         }
+
+
+        if (objHit)
+        {
+            DetruireObjectWhenHitted();
+            objHit = false;
+        }
     }
 
 
@@ -46,15 +55,18 @@ public class ObjectsShooting : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
+            if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove && !objHit)
+            {
                 DetruireObject();
+                dontHitObj = true;
+            }
         }
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !dontHitObj)
         {
-            DetruireObjectWhenHitted();
+            objHit = true;
         }
     }
 

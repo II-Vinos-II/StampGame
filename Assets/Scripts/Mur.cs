@@ -39,7 +39,7 @@ public class Mur : MonoBehaviour
     {
         if (other.gameObject.tag == "Baril")
         {
-
+            Destroy(barilController);
             explosionSound.Play();
             explosion.Play();
 
@@ -57,7 +57,11 @@ public class Mur : MonoBehaviour
             }
             for(int i = 0; i < portesCleanObj.Count; i++)
             {
-                if(portesCleanObj[i].tag == "Porte Condamnée")
+                if (portesCleanObj[i].tag == "Porte Condamnée")
+                {
+                    portesCleanObj[i].tag = "Untagged";
+                }
+                if (portesCleanObj[i].tag == "Porte Clean")
                 {
                     portesCleanObj[i].tag = "Untagged";
                 }

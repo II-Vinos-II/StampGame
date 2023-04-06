@@ -23,20 +23,22 @@ public class Baril : MonoBehaviour
             playerController.Taper();
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            PushBaril();
+            if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
+            {
+                PushBaril();
+            }
         }
-
     }
     public void PushBaril()
     {
 
         barilhit.Play();
         //StartCoroutine(DestroyVerif());
-        float vitesseDestruction = Random.Range(2000, 2500);
+        float vitesseDestruction = Random.Range(1000, 1500);
         float angleDestruction = Random.Range(0f, 45f);
         Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
         float super = angleDeTir.x;
@@ -46,7 +48,6 @@ public class Baril : MonoBehaviour
             rb.AddForce(transform.forward * vitesseDestruction);
             rb.useGravity = true;
 
-        Destroy(gameObject, 1f);
         
         if (!ExloseWall)
         {

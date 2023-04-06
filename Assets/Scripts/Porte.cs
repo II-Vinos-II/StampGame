@@ -13,7 +13,7 @@ public class Porte : MonoBehaviour
     private bool giveScore;
     public Score score;
     public Movements playerController;
-    public bool porteCleanHit = true;
+    public bool porteCleanHit = false;
 
     public MeshRenderer porteClean;
     public GameObject porteFracturée;
@@ -21,6 +21,7 @@ public class Porte : MonoBehaviour
     public List<Rigidbody> rb = new List<Rigidbody>();
     public List<BoxCollider> bC = new List<BoxCollider>();
     public List<GameObject> portesObj = new List<GameObject>();
+    public bool dontHitPorteClean;
 
     float _thrust = 200;
     bool isDestroyed = false;
@@ -35,6 +36,7 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(porteCleanHit);
 
         if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
         {
@@ -43,6 +45,12 @@ public class Porte : MonoBehaviour
                 playerController.Taper();
 
             }
+        }
+
+        if (porteCleanHit)
+        {
+            DetruirePorteCondamnée();
+            porteCleanHit = false;
         }
     }
 
@@ -58,24 +66,23 @@ public class Porte : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
-            DetruirePorte();
-            //StartCoroutine(WaitNotToBeRatioByPorte());
+            if ((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove && !porteCleanHit)
+            {
+                DetruirePorte();
+                dontHitPorteClean = true;
+            }
         }
     }
     
     public void OnTriggerExit(Collider other)
     {
-        if(tag == "Porte Clean" && other.CompareTag("Player"))
+        if(tag == "Porte Clean" && other.CompareTag("Player") && !dontHitPorteClean)
         {
             porteCleanHit = true;
         }
-        if (porteCleanHit)
-        {
-            DetruirePorteCondamnée();
-            porteCleanHit = false;
-        }
+        
     }
+
 
     public void DetruirePorteCondamnée()
     {

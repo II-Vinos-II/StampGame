@@ -44,7 +44,6 @@ public class Movements : MonoBehaviour
     }
     private void Update()
     {
-        print(canMove);
 
         if (canMove)
         {

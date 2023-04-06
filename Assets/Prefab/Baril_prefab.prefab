@@ -44,11 +44,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079955470711012049}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7966858, y: 2.6386147, z: 3.9009173}
-  m_Center: {x: -0.03657776, y: 1.2318068, z: -1.0499316}
+  m_Size: {x: 1.7966858, y: 2.6386147, z: 5.89615}
+  m_Center: {x: -0.03657776, y: 1.2318068, z: -2.047548}
 --- !u!114 &7269981185181244636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!136 &1225162935118915773
 CapsuleCollider:
@@ -93,10 +93,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.07318488
-  m_Height: 0.14636976
+  m_Radius: 0.8089272
+  m_Height: 2.4658287
   m_Direction: 1
-  m_Center: {x: 0.012471348, y: 0.097423226, z: 0}
+  m_Center: {x: 0.012471318, y: 1.2571527, z: 0.037410617}
 --- !u!1001 &7053911103656316183
 PrefabInstance:
   m_ObjectHideFlags: 0
