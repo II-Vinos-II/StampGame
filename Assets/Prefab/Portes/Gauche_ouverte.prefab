@@ -4368,7 +4368,7 @@ GameObject:
   - component: {fileID: 8368017252670365907}
   m_Layer: 0
   m_Name: Porte.Gauche_Clean
-  m_TagString: Untagged
+  m_TagString: Porte Clean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4451,8 +4451,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.058711916, y: 0.02550594, z: 0.037656624}
-  m_Center: {x: -0.027723107, y: -0.05127929, z: 0.018945884}
+  m_Size: {x: 0.04058941, y: 0.02550594, z: 0.037656624}
+  m_Center: {x: -0.022593081, y: -0.05127929, z: 0.018945886}
 --- !u!114 &8368017252670365907
 MonoBehaviour:
   m_ObjectHideFlags: 0

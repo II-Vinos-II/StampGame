@@ -13,6 +13,7 @@ public class Porte : MonoBehaviour
     private bool giveScore;
     public Score score;
     public Movements playerController;
+    public bool porteCleanHit = true;
 
     public MeshRenderer porteClean;
     public GameObject porteFracturée;
@@ -40,6 +41,7 @@ public class Porte : MonoBehaviour
             if (playerController.canMove)
             {
                 playerController.Taper();
+
             }
         }
     }
@@ -58,6 +60,20 @@ public class Porte : MonoBehaviour
         {
             if((Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.Mouse0)) && playerController.canMove)
             DetruirePorte();
+            //StartCoroutine(WaitNotToBeRatioByPorte());
+        }
+    }
+    
+    public void OnTriggerExit(Collider other)
+    {
+        if(tag == "Porte Clean" && other.CompareTag("Player"))
+        {
+            porteCleanHit = true;
+        }
+        if (porteCleanHit)
+        {
+            DetruirePorteCondamnée();
+            porteCleanHit = false;
         }
     }
 
@@ -131,14 +147,6 @@ public class Porte : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         playerController.hitted = true;
     }
-    
-    public void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            playerController.hitted = false;
-        }
-    }
 
     public IEnumerator WaitToRestoreFromDegats()
     {
@@ -158,4 +166,11 @@ public class Porte : MonoBehaviour
         playerController.speed = 15;
 
     }
+
+    //public IEnumerator WaitNotToBeRatioByPorte()
+    //{
+    //    porteCleanHit = false;
+    //    yield return new WaitForSeconds(1f);
+    //    porteCleanHit = true;
+    //}
 }

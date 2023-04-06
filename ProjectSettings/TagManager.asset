@@ -11,6 +11,7 @@ TagManager:
   - Mur
   - Baril
   - Object
+  - Porte Clean
   layers:
   - Default
   - TransparentFX

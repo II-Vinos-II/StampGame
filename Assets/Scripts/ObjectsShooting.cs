@@ -50,6 +50,15 @@ public class ObjectsShooting : MonoBehaviour
                 DetruireObject();
         }
     }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            DetruireObjectWhenHitted();
+        }
+    }
+
+    
 
     public void DetruireObjectWhenHitted()
     {
@@ -120,18 +129,11 @@ public class ObjectsShooting : MonoBehaviour
         playerController.hitted = true;
     }
 
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerController.hitted = false;
-        }
-    }
 
     public IEnumerator WaitToRestoreFromDegats()
     {
         playerController.oof.Play();
-        playerController.speed = 3;
+        playerController.speed = 0;
         yield return new WaitForSeconds(2.5f);
         playerController.canMove = true;
         playerController.speed = 3;

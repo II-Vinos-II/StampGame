@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 5629073711943951233}
   m_Layer: 0
   m_Name: Porte.Droite_Clen
-  m_TagString: Untagged
+  m_TagString: Porte Clean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,8 +528,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.050651167, y: 0.024051396, z: 0.037610557}
-  m_Center: {x: -0.023692716, y: 0.048943415, z: 0.018922856}
+  m_Size: {x: 0.038997144, y: 0.024051396, z: 0.037610557}
+  m_Center: {x: -0.022008399, y: 0.048943415, z: 0.018922854}
 --- !u!114 &5629073711943951233
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3534,7 +3534,7 @@ GameObject:
   - component: {fileID: 2058106877625573026}
   m_Layer: 0
   m_Name: Porte.Milieu_Clean
-  m_TagString: Untagged
+  m_TagString: Porte Clean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3617,8 +3617,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.066226125, y: 0.02272835, z: 0.038939502}
-  m_Center: {x: -0.03148022, y: -0.0013758863, z: 0.019587325}
+  m_Size: {x: 0.041973647, y: 0.02272835, z: 0.038939502}
+  m_Center: {x: -0.023021512, y: -0.0013758853, z: 0.019587327}
 --- !u!114 &2058106877625573026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5268,7 +5268,7 @@ GameObject:
   - component: {fileID: 4265914237907063791}
   m_Layer: 0
   m_Name: Milieu_ouverte
-  m_TagString: Untagged
+  m_TagString: Porte Clean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
