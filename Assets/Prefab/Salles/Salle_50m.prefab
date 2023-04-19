@@ -696,6 +696,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3874548019516054033}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6591124561087819870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1243758513682945457, guid: 2c6de153aca7c584984a1307dc8cb82f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3874548019516054033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3787975332047677569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6591124561087819870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009710942, y: 0.21806118, z: 0.049952295}
+  m_Center: {x: -0.0014499174, y: -0.00060174987, z: 0.025093721}
 --- !u!1001 &4018556436602278470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1273,8 +1292,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plafond_50M
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7466c1f50afec86469eff27b6e06e45b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7466c1f50afec86469eff27b6e06e45b, type: 3}
+--- !u!1 &8226365423754003173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7466c1f50afec86469eff27b6e06e45b,
+    type: 3}
+  m_PrefabInstance: {fileID: 9144702071950606260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &3385257314424600940
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226365423754003173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3995987821906005392, guid: 7466c1f50afec86469eff27b6e06e45b, type: 3}
 --- !u!4 &8746618744469035103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7466c1f50afec86469eff27b6e06e45b,

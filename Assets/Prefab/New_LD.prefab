@@ -12784,11 +12784,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1433812850080596998, guid: ecd33a8f80040b1489c4d794f34e5c6d,
-        type: 3}
-      propertyPath: "murFractur\xE9"
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1498122858785500192, guid: ecd33a8f80040b1489c4d794f34e5c6d,
         type: 3}
       propertyPath: m_Mesh
