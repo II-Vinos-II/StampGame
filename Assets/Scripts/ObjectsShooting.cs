@@ -86,7 +86,7 @@ public class ObjectsShooting : MonoBehaviour
             //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
             for (int i = 0; i < rb.Count; i++)
             {
-                rb[i].AddForce(transform.right * vitesseDestruction * super);
+                rb[i].AddForce(transform.forward * vitesseDestruction * super);
                 rb[i].useGravity = true;
             }
             for (int i = 0; i < bC.Count; i++)
@@ -107,14 +107,14 @@ public class ObjectsShooting : MonoBehaviour
             objectClean.enabled = false;
             objectFracturé.SetActive(true);
             //StartCoroutine(DestroyVerif());
-            float vitesseDestruction = Random.Range(2000, 2500);
+            float vitesseDestruction = Random.Range(1000, 1500);
             float angleDestruction = Random.Range(0f, 45f);
             Quaternion angleDeTir = Quaternion.Euler(angleDestruction, angleDestruction, angleDestruction);
             float super = angleDeTir.x;
             //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
             for (int i = 0; i < rb.Count; i++)
             {
-                rb[i].AddForce(transform.right * vitesseDestruction * super);
+                rb[i].AddForce(transform.forward * vitesseDestruction * super);
                 rb[i].useGravity = true;
             }
             for (int i = 0; i < bC.Count; i++)
