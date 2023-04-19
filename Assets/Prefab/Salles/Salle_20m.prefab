@@ -1156,12 +1156,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5998771, y: 2.3012369, z: 0.80248487}
   m_Center: {x: 0.0000019073486, y: 0.00000011920929, z: -0.00000034272716}
---- !u!1 &6047567005188124706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2216832629623955748, guid: 5f546b19465693f4187460fddd59a395,
-    type: 3}
-  m_PrefabInstance: {fileID: 5561527374751158534}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6465354540603523307 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1483670122089845229, guid: 5f546b19465693f4187460fddd59a395,
@@ -1766,9 +1760,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e2e20bacb059e3b4ab37aedf1950211f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e8a206207b58844aaae658ff80f7eac, type: 3}
---- !u!23 &5115668467245923232 stripped
+--- !u!23 &1957861808355276457 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3959525135874526111, guid: 2e8a206207b58844aaae658ff80f7eac,
+  m_CorrespondingSourceObject: {fileID: 7720918590517790358, guid: 2e8a206207b58844aaae658ff80f7eac,
     type: 3}
   m_PrefabInstance: {fileID: 8074266370202939455}
   m_PrefabAsset: {fileID: 0}
@@ -1803,7 +1797,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8074266370202939455}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8992968780125903787
+--- !u!114 &977840907465644794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1817,70 +1811,220 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barilController: {fileID: 0}
   explosion: {fileID: 4116237775987109502}
-  murClean: {fileID: 5115668467245923232}
-  murCleanCollider: {fileID: 7257208634111322306}
-  "murFractur\xE9": {fileID: 6047567005188124706}
+  murClean: {fileID: 1957861808355276457}
+  murCleanCollider: {fileID: 0}
+  "murFractur\xE9": {fileID: 0}
   explosionSound: {fileID: 0}
-  portesCleanRenderers: []
-  portesCleanObj: []
-  "portesFractur\xE9esObj": []
+  portesCleanRenderers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  portesCleanObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  "portesFractur\xE9esObj":
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   rb:
-  - {fileID: 3503721984929392609}
-  - {fileID: 679473592864848752}
-  - {fileID: 3882639315138498768}
-  - {fileID: 3966998069721209363}
-  - {fileID: 5188337307421424074}
-  - {fileID: 2074227417889347408}
-  - {fileID: 543837908731358304}
-  - {fileID: 61040421331000748}
-  - {fileID: 8212603490209027311}
-  - {fileID: 8488051804948504461}
-  - {fileID: 2624394154760973658}
-  - {fileID: 7507546680893128337}
-  - {fileID: 7483501021471248}
-  - {fileID: 3862284444462845865}
-  - {fileID: 8774726336644658454}
-  - {fileID: 2423342642520942097}
-  - {fileID: 663128564785881951}
-  - {fileID: 4250046964691660434}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   bC:
-  - {fileID: 476975113983285209}
-  - {fileID: 2961575002558719462}
-  - {fileID: 7038763279087416347}
-  - {fileID: 2912178382456585585}
-  - {fileID: 3238244745595606681}
-  - {fileID: 1478726232623846584}
-  - {fileID: 3437101064932304580}
-  - {fileID: 9205176737489562979}
-  - {fileID: 832147160707578076}
-  - {fileID: 1131184596649334981}
-  - {fileID: 5927530846449043114}
-  - {fileID: 6403099530357072311}
-  - {fileID: 5507423767577424589}
-  - {fileID: 1590222304225803118}
-  - {fileID: 2016918666235312639}
-  - {fileID: 6562374190826385353}
-  - {fileID: 5199814523750710201}
-  - {fileID: 4048541696942990418}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   mursObj:
-  - {fileID: 1508146518178405639}
-  - {fileID: 7905738457105991858}
-  - {fileID: 7780687033940278311}
-  - {fileID: 7589297593968971125}
-  - {fileID: 1512369439968594436}
-  - {fileID: 5528577670653841539}
-  - {fileID: 1432371460377260214}
-  - {fileID: 7680830010941917816}
-  - {fileID: 3876217581246838028}
-  - {fileID: 4987115971458282720}
-  - {fileID: 8335478208985185676}
-  - {fileID: 1367782473388470571}
-  - {fileID: 1541872403994176000}
-  - {fileID: 3046184728946638179}
-  - {fileID: 1914552980539863548}
-  - {fileID: 2841455248129655318}
-  - {fileID: 3305003609755439067}
-  - {fileID: 6465354540603523307}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &8798007801181905151
 PrefabInstance:
   m_ObjectHideFlags: 0
