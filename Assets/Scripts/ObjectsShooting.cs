@@ -86,7 +86,7 @@ public class ObjectsShooting : MonoBehaviour
             //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
             for (int i = 0; i < rb.Count; i++)
             {
-                rb[i].AddForce(transform.forward * vitesseDestruction * super);
+                rb[i].AddForce(playerController.transform.forward * vitesseDestruction * super);
                 rb[i].useGravity = true;
             }
             for (int i = 0; i < bC.Count; i++)
@@ -114,7 +114,7 @@ public class ObjectsShooting : MonoBehaviour
             //rb.transform = new Vector3(transform.position.x * angleDestruction, transform.position.y, transform.position.z * angleDestruction;
             for (int i = 0; i < rb.Count; i++)
             {
-                rb[i].AddForce(transform.forward * vitesseDestruction * super);
+                rb[i].AddForce(playerController.transform.forward * vitesseDestruction * super);
                 rb[i].useGravity = true;
             }
             for (int i = 0; i < bC.Count; i++)

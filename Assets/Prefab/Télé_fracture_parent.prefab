@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 862989595996453654}
   - component: {fileID: 862989595996453653}
   - component: {fileID: 862989595996453652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "T\xE9l\xE9_fracture04"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2809,7 +2809,7 @@ GameObject:
   - component: {fileID: 862989596155061472}
   - component: {fileID: 862989596155061487}
   - component: {fileID: 862989596155061486}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "T\xE9l\xE9_fracture01"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5906,7 +5906,7 @@ GameObject:
   - component: {fileID: 862989596228072857}
   - component: {fileID: 862989596228072856}
   - component: {fileID: 862989596228072871}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "T\xE9l\xE9_fracture03"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9842,7 +9842,7 @@ GameObject:
   - component: {fileID: 862989597035041036}
   - component: {fileID: 862989597035041035}
   - component: {fileID: 862989597035041034}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "T\xE9l\xE9_fracture02"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
