@@ -39,7 +39,7 @@ public class Mur : MonoBehaviour
     {
         if (other.gameObject.tag == "Baril")
         {
-            Destroy(barilController);
+            Destroy(barilController.gameObject);
             explosionSound.Play();
             explosion.Play();
 
