@@ -10,7 +10,8 @@ public class radio : MonoBehaviour
     public List<BoxCollider> bC = new List<BoxCollider>();
     public List<GameObject> radioObj = new List<GameObject>();
     public Score score;
-
+    public AudioSource FinTek;
+    public AudioSource Piano;
     public GameObject fin;
 
     public bool isDestroyed = false;
@@ -47,7 +48,8 @@ public class radio : MonoBehaviour
         {
             bC[i].isTrigger = false;
         }
-
+        FinTek.Stop();
+        Piano.PlayDelayed(2);
     }
 
     public IEnumerator Finish()

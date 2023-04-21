@@ -6,6 +6,16 @@ public class ObjectsShooting : MonoBehaviour
 {
     public LifeManager lifeManager;
 
+
+    enum ObjectStatus
+    {
+        Verre,
+        Bois,
+        Livre,
+        Verre2
+    }
+    [SerializeField] ObjectStatus status;
+
     private bool giveScore;
     public Score score;
     public Movements playerController;
@@ -22,7 +32,7 @@ public class ObjectsShooting : MonoBehaviour
     float _thrust = 200;
     bool isDestroyed = false;
 
-    //public AudioSource objectCrashSound;
+    public AudioSource objectCrashSound;
 
     // Start is called before the first frame update
     void Start()
@@ -127,7 +137,8 @@ public class ObjectsShooting : MonoBehaviour
             }
             if (!giveScore)
             {
-                //objectCrashSound.Play();
+                objectCrashSound.pitch = (Random.Range(0.6f, 1.5f));
+                objectCrashSound.Play();
                 score.ScoreSystemOBJ();
                 giveScore = true;
             }

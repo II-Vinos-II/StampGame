@@ -1626,6 +1626,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3846382375231490861, guid: e82f9aa51d49f2b42ad2b8061228ca3d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146087307541559455, guid: e82f9aa51d49f2b42ad2b8061228ca3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82f9aa51d49f2b42ad2b8061228ca3d, type: 3}
 --- !u!43 &462158937
