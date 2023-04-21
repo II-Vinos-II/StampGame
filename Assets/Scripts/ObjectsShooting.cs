@@ -128,7 +128,7 @@ public class ObjectsShooting : MonoBehaviour
             if (!giveScore)
             {
                 //objectCrashSound.Play();
-                score.ScoreSystem();
+                score.ScoreSystemOBJ();
                 giveScore = true;
             }
         }

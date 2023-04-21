@@ -7,10 +7,12 @@ public class Score : MonoBehaviour
 {
     Movements playerController;
     [SerializeField] int scoreInt;
-    [SerializeField] int amount = 10;
+    [SerializeField] int amount = 50;
     [SerializeField] int amountBaril = 100;
+    [SerializeField] int amountObj = 10;
     public bool canHavePoints;
     public TextMeshProUGUI text;
+    public Animator anim;
     public void Update()
     {
 
@@ -19,12 +21,18 @@ public class Score : MonoBehaviour
     public void ScoreSystem()
     {
         scoreInt += amount;
-
+        anim.SetTrigger("ScoreEnPlus");
     }
 
     public void ScoreSystemBaril()
     {
         scoreInt += amountBaril;
+        anim.SetTrigger("ScoreEnPlus");
+    }
+    public void ScoreSystemOBJ()
+    {
+        scoreInt += amountObj;
+        anim.SetTrigger("ScoreEnPlus");
     }
 
 }

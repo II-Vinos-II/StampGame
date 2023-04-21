@@ -22,7 +22,7 @@ public class radio : MonoBehaviour
             playerController.Taper();
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
@@ -47,13 +47,16 @@ public class radio : MonoBehaviour
         {
             bC[i].isTrigger = false;
         }
+
     }
 
     public IEnumerator Finish()
     {
-        Time.timeScale = .5f;
+        Time.timeScale = .25f;
         DestroyRadio();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(.25f);
+        playerController.canMove = false;
+        yield return new WaitForSeconds(1);
         fin.SetActive(true);
     }
 }
